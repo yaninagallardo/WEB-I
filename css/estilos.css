@@ -1,0 +1,59 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+/*
+    --- INICIO ESTILO NAV ---
+*/
+.header{
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#nav {
+    margin:5% 60%;
+    width:60%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+    list-style:none;
+}
+
+.listaNav > li {
+    float:left;
+}
+
+.listaNav li a {
+    background-color: transparent;
+    color:#000;
+    text-decoration:none;
+    padding:10px 15px;
+    display: block;
+    
+}
+
+.listaNav li a:hover {
+    background-color: cornflowerblue;
+}
+
+.listaNav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.listaNav li:hover > ul {
+    display:block;
+}
+
+.listaNav li ul li {
+    position:relative;
+    top:1px;
+}
+
+/*
+    --- FIN ESTILO NAV ---
+*/
+
