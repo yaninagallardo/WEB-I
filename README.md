@@ -1,1 +1,2 @@
-blogDeSeries
+En este repositorio se desarrolla una pagina web que tratara como tema principal un blog de series.
+EL cual ofrecera al usuario información acerca de diferentes serie. (sinopsis, temporadas, capitulos), a su vez los usuarios ingresantes al sitio podran dejar comentarios sobre una serie, temporada o capitulo en especial, ingresando como datos nombre, email (solo sera visto pr el administrador de la página), selección de serie, temporada o capitulo y comentario.
