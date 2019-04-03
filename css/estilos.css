@@ -3,16 +3,29 @@
     padding:0px;
 }
 /*
+    ---INICIO ESTILO LOGO ---
+*/
+img{
+    width: 10%;
+    height: 15%;
+    float: left;
+    margin-left: 5%;
+}
+
+/*
+    --- FIN ESTILO LOGO ---
+*/
+/*
     --- INICIO ESTILO NAV ---
 */
 .header{
     width: 100%;
-    background-color: #fff;
+    background-color: #09253C;
     overflow: hidden;
 }
 
 #nav {
-    margin:5% 60%;
+    margin:8% 60%;
     width:60%;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -26,8 +39,8 @@ ul, ol {
 }
 
 .listaNav li a {
-    background-color: transparent;
-    color:#000;
+    background-color: #09253C;
+    color:#fff;
     text-decoration:none;
     padding:10px 15px;
     display: block;
@@ -57,3 +70,27 @@ ul, ol {
     --- FIN ESTILO NAV ---
 */
 
+/*
+    --- INICIO ESTILO BODY ---
+*/
+body{
+    background-color: black;
+}
+/*
+    --- FIN ESTILO BODY ---
+*/
+
+/* 
+    --- INICIO ESTILO LISTA SERIES---
+*/
+#listaSeries{
+    display: inline-block;
+    width: 100%;
+}
+#listaSeries ul li a img{
+    margin-top: 10%;
+    width: 25%;
+}
+/*
+    --- FIN ESTILO LISTA SERIES ---
+*/
