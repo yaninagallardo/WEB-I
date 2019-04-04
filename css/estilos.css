@@ -1,23 +1,19 @@
+/* ----------------------------- index.html -------------------- */
+
 * {
     margin:0px;
     padding:0px;
 }
-/*
-    ---INICIO ESTILO LOGO ---
-*/
-img{
+
+/* --- ESTILO LOGO --- */
+#logo{
     width: 10%;
     height: 15%;
     float: left;
     margin-left: 5%;
 }
 
-/*
-    --- FIN ESTILO LOGO ---
-*/
-/*
-    --- INICIO ESTILO NAV ---
-*/
+/* --- ESTILO NAV --- */
 .header{
     width: 100%;
     height: 20%;
@@ -67,23 +63,13 @@ ul, ol {
     top:3px;
 }
 
-/*
-    --- FIN ESTILO NAV ---
-*/
-
-/*
-    --- INICIO ESTILO BODY ---
-*/
+/*--- ESTILO BODY --- */
 body{
     background-color: #000;
 }
-/*
-    --- FIN ESTILO BODY ---
-*/
 
-/* 
-    --- INICIO ESTILO LISTA SERIES---
-*/
+
+/* ---ESTILO LISTA SERIES--- */
 #listaSeries{
     display: inline-block;
     width: 100%;
@@ -100,19 +86,12 @@ body{
     color: #fff;
 
 }
-/*
-    --- FIN ESTILO LISTA SERIES ---
-*/
 
-/*
-    --- INICIO ESTILO FOOTER ---
-*/
+
+/* --- ESTILO FOOTER --- */
 #footer{
     background-color: aqua;
     width: 100%;
     height: 200px;
 }
 
-/*
-    --- FIN ESTILO FOOTER ---
-*/
