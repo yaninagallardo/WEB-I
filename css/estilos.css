@@ -15,14 +15,14 @@ img{
 }
 
 /* --- ESTILO NAV --- */
-#header{
+header{
     width: 100%;
     height: 20%;
     background-color: #09253C;
     overflow: hidden;
 }
 
-#nav {
+nav {
     margin:7% 60%;
     width: 60%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -95,18 +95,22 @@ body{
 }
 
 /* --- ESTILO FOOTER --- */
-#footer{
+footer{
     background-color: aqua;
     width: 100%;
-    height: 200px;
+    height:125px;
+    margin: 0px;
 }
 
-#footer ul li{
-    display: inline;
-    margin-left: 50%;
+footer ul li{
     text-decoration-line: underline;
 }
 
+.genero{
+    position: relative;
+    float: left;
+    padding: 1.5%;
+}
 
 
 /* -------------------estilo para página:  ---------------------*/
