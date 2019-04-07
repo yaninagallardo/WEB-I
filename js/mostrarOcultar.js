@@ -1,4 +1,8 @@
 
+
+
+
+
 //Funcion que despliega elemento pasado por parametro 
 function visibilizarElemento(elemento) {
     elemento.style.visibility="visible";
@@ -11,9 +15,22 @@ function ocultarElemento(elemento){
     elemento.style.display="none";
 }
 
-function mostrarComentario(elemento, nombre, temporada, capitulo, comentario){
+
+function mostrarComentario(elemento, nombre){
+    "use strict";
+    let nuevo = nombre;
+
+    //debug
+    console.log(nuevo);
+
+    nuevo.innerHTML ="Nombre: " + nuevo;
     ocultarElemento(elemento);
-    let nuevo = document.getElementById("#nuevoComentario");
-    nuevo.innerText("Nombre: " + nombre);
+    
 }
 
+let form = document.querySelector("#formulario");
+let btn = document.querySelector("#btnSalir");
+btn.addEventListener("click", ocultarElemento(form));
+
+console.log(form);
+console.log(btn);
