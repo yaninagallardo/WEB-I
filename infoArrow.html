@@ -18,14 +18,14 @@
             <ul class="listaNav">
                 <li><label>Acción</label>
                     <ul class="seriesMenu">
-                        <li><a href="">Chicago PD</a></li>
                         <li><a href="infoArrow.html">Arrow</a></li>
+                        <li><a href="">Chicago PD</a></li>
                     </ul>
                 </li>
                 <li><label>Comedia</label>
                     <ul class="seriesMenu">
-                        <li><a href="">The big bang theory</a></li>
                         <li><a href="">Modern Family</a></li>
+                        <li><a href="">The big bang theory</a></li>
                     </ul>
                 </li>
                 <li><label>Terror</label>
@@ -106,20 +106,21 @@
         <!--fin información sobre la serie-->
 
         <div id="nuevoComentario">
-            <label id="txtnombre"> </label>
-            <label >Temporada: </label>
-            <label >Capitulo: </label>
-            <label>Comentario: </label>
+            <label for="nombre">Nombre:  <span id="nameRandom"></span></label>
+            <label for="temporada">Temporada: <span id="tempRandom"></span></label>
+            <label>Capitulo: <span id="capRandom"></span></label>
+            <label>Comentario: <span id="comentRandom"></span></label>
+            <label id="muestra"> * Comentario de muestra *</label>
             <hr/>
         </div>
         <div id="comentarios">
             <div id="cajaBtnComentar">
-                <button id="btnComentar" onclick="visibilizarElemento(formulario)">Comentar</button>
+                <button id="btnComentar">Comentar</button>
             </div>
-            <div id="formulario">
+            <div class="formulario">
                 <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
                 <form>
-                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" />
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" value=""/>
                     <input id="email" type="email" name="mail" placeholder="Email" />
                     <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" />
                     <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" />
