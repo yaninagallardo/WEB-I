@@ -24,7 +24,7 @@ body{
     background-color: rgba(17, 18, 37, 0.795);
     width: 80%;
     height: 80%;
-    margin: auto;
+    margin: 0% 10%;
     margin-bottom: 10%;
 }
 
@@ -38,17 +38,17 @@ body{
 }
 
 /* --- ESTILO NAV --- */
-header{
+#header{
     width: 100%;
     height: 20%;
     overflow: hidden;
 }
 
-nav {
+#nav {
     margin:7% 60%;
     width: 60%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 120%;
+    font-size: 160%;
 }
 
 ul {
@@ -65,7 +65,8 @@ ul {
     color:#fff;
     text-decoration:none;
     padding: 10px 15px;
-    display: block;
+    display: inline;
+    
 }
 
 /* subbotones en nav */
@@ -120,11 +121,15 @@ footer{
     background-color: aqua;
     width: 100%;
     height:125px;
-    margin: 0px;
+    margin: 0%;
 }
 
 footer ul li{
     text-decoration-line: underline;
+}
+
+.genero ul li a{
+    list-style: none;
 }
 
 .genero{
@@ -141,7 +146,6 @@ footer ul li{
     color:rgb(201, 255, 6);
     font-size: 700%;
     font-family: "member";
-   
 }
 
 #infoSerie{
