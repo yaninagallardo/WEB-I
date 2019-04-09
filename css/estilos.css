@@ -1,32 +1,54 @@
-/* ------------------------página de inicio: index.html -------------------- */
-
-* {
-    margin:0px;
-    padding:0px;
+/*  FUENTES */
+@font-face{
+    font-family: "noStress";
+    src: url(font/NO\ STRESS\ PERSONAL\ USE.ttf);
+}
+@font-face{
+    src: url(font/Member.otf);
+    font-family: "member";
 }
 
+/* ------------------------página de inicio: index.html -------------------- */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+/*--- ESTILO BODY --- */
+body{
+    background-image: url(images/fondo-estrella.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cuerpoPagina{
+    background-color: rgba(17, 18, 37, 0.795);
+    width: 80%;
+    height: 80%;
+    margin: 0% 10%;
+    margin-bottom: 10%;
+}
 
 /* --- ESTILO LOGO --- */
-img{
-    width: 10%;
+#header img{
+    width: 15%;
     height: 15%;
     float: left;
-    margin-left: 5%;
+    margin-left: 7%;
+    margin-top: 1%;
 }
 
 /* --- ESTILO NAV --- */
-header{
+#header{
     width: 100%;
     height: 20%;
-    background-color: #09253C;
     overflow: hidden;
 }
 
-nav {
+#nav {
     margin:7% 60%;
     width: 60%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 120%;
+    font-size: 160%;
 }
 
 ul {
@@ -37,24 +59,27 @@ ul {
     float: left;
 }
 
+/* botones principales en nav*/
 .listaNav li label {
-    background-color: #09253C;
+    background-color: transparent;
     color:#fff;
     text-decoration:none;
     padding: 10px 15px;
-    display: block;
+    display: inline;
+    
 }
 
+/* subbotones en nav */
 .seriesMenu li a {
-    background-color: #09253C;
+    background-color: rgba(9, 55, 92, 0.5);
     color:#fff;
     text-decoration:none;
     padding:5px 10px;
     display: block;
 }
 
-.listaNav li label :hover {
-    background-color: cornflowerblue;
+.listaNav li :hover {
+    background-color: rgba(100, 148, 237, 0.5);
 }
 
 .listaNav li ul {
@@ -66,10 +91,7 @@ ul {
     display:block;
 }
 
-/*--- ESTILO BODY --- */
-body{
-    background-color: rgb(66, 50, 50);
-}
+
 
 /* --- ESTILO TITULO SERIES DESTACADAS --- */ 
 #tituloSeries{
@@ -99,11 +121,15 @@ footer{
     background-color: aqua;
     width: 100%;
     height:125px;
-    margin: 0px;
+    margin: 0%;
 }
 
 footer ul li{
     text-decoration-line: underline;
+}
+
+.genero ul li a{
+    list-style: none;
 }
 
 .genero{
@@ -111,7 +137,205 @@ footer ul li{
     float: left;
     padding: 1.5%;
 }
+/* -------------------estilo para página: infoArrow.html ---------------------*/
+/* --- ESTILO INFORMACION DE LA SERIE --- */
+#tituloSerie {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    text-align: center;
+    color:rgb(201, 255, 6);
+    font-size: 700%;
+    font-family: "member";
+}
 
+#infoSerie{
+    width: 100%;
+}
 
-/* -------------------estilo para página:  ---------------------*/
+/* ---Imagen --- */
+#imagenPortada img{
+    width: 20%;
+    height: 30%;
+    float: left;
+    margin-left: 5%;
+    margin-right: 3%;
+}
 
+#sipnosisYPersonajes{
+    width: 90%;
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+}
+
+/* ---Actores --- */ 
+#personajes h2 {
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1%;
+}
+.listaActores li{
+    display: inline-block;
+    margin-top: 1%;
+}
+
+.imagenPersonaje img{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.imagenPersonaje p {
+    color: #fff;
+}
+
+/* --- Botón ver capitulos ---*/
+
+#cajaBtnCapitulos {
+    margin-left: 80%;
+    width: 40%;
+    height: 10%;
+    
+}
+ #btnCapitulo {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnCapitulos :hover{
+    color: gold;
+}
+
+#btnCapitulo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* linea separadora de infromación y coemntarios */
+hr{
+    size: 10px;
+    margin: 1% auto;
+    border-color: #3F4053;
+    width: 90%;
+}
+
+/* --- BOTÓN COMENTARIOS --- */
+
+#cajaBtnComentar{
+    margin-left: 80%;
+    margin-bottom: 3%;
+    width: 40%;
+    height: 10%;
+}
+
+#btnComentar {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnComentar :hover{
+    color: gold;
+}
+
+/* --- FORMULARIO --- */
+.formulario {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 30%;
+    height: 360px;
+    visibility: hidden;
+    display: none;
+    background-image: url(images/estrella.gif);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+}
+/* clases ocultar y mostrar llamados desde javascript*/
+.ocultar {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 30%;
+    height: 360px;
+    visibility: hidden;
+    display: none;
+    background-image: url(images/estrella.gif);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+}
+
+.mostrar {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 30%;
+    height: 360px;
+    background-image: url(images/estrella.gif);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+    visibility: visible;
+    display: block;
+}
+
+#nombre, #email{
+    width: 60%;
+    margin-left: 10%;
+}
+
+.formulario input, textarea{
+    display: block;
+    padding: 1%;
+    margin-top: 2%;
+}
+    
+#comentario{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#enviar{
+    width: 36%;
+    background-color: red;
+    color: white;
+    margin:auto;
+    margin-top: 5%;
+}
+
+#temporada, #capitulo{
+    width: 50%;
+    margin-left: 10%;
+}
+
+/* --- Botón cerrar formulario ---*/
+#btnSalir{
+    width: 10%;
+    background: transparent;
+    border: transparent;
+    margin-left: 88%;
+    margin-top: 4%;
+    color: red;
+}
+
+/* --- AGREGAR NUEVO COMENTARIO --- */
+
+#nuevoComentario label{
+    display: block;
+    color: turquoise;
+    margin-left: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nuevoComentario span{
+    color: white;
+}
+
+#nuevoComentario #muestra {
+    color: gray;
+    font-size: 10px;
+}
