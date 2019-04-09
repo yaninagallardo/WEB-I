@@ -253,25 +253,12 @@ hr{
 }
 /* clases ocultar y mostrar llamados desde javascript*/
 .ocultar {
-    margin: auto;
-    margin-bottom: 2%;
-    width: 30%;
-    height: 360px;
     visibility: hidden;
     display: none;
-    background-image: url(images/estrella.gif);
-    background-repeat: no-repeat;
-    border: solid 1px grey;
+    
 }
 
 .mostrar {
-    margin: auto;
-    margin-bottom: 2%;
-    width: 30%;
-    height: 360px;
-    background-image: url(images/estrella.gif);
-    background-repeat: no-repeat;
-    border: solid 1px grey;
     visibility: visible;
     display: block;
 }
@@ -345,17 +332,15 @@ table, td, tr{
     text-align: center;
 }
 .td{
-    height: 0px;
     width: 30%;
-    padding:8px 81px;
+    padding:1% 9%;
 }
 .infoTabla{
     width: 38%;
-    padding: 0px 98.5px;
+    padding: 0% 10%;
     
 }
 .imagenIE img{
-    padding:0px 68px;
     width: 20%;
     height: 30%;
     margin-left: 5%;
