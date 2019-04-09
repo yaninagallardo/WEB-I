@@ -332,3 +332,33 @@ hr{
     color: gray;
     font-size: 10px;
 }
+/*--- Tabla de capitulos---*/
+thead,td,tr{
+    background-color: snow;
+} 
+table, td, tr{
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+    
+}
+.td,.infoTabla {
+    text-align: center;
+}
+.td{
+    height: 0px;
+    width: 30%;
+    padding:8px 81px;
+}
+.infoTabla{
+    width: 38%;
+    padding: 0px 98.5px;
+    
+}
+.imagenIE img{
+    padding:0px 68px;
+    width: 20%;
+    height: 30%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
