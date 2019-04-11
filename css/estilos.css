@@ -350,13 +350,12 @@ table, td, tr{
     text-align: center;
 }
 .td{
-    height: 0px;
     width: 30%;
-    padding:8px 81px;
+    padding:1% 9%;
 }
 .infoTabla{
     width: 38%;
-    padding: 0px 98.5px;
+    padding: 0% 10%;
     
 }
 .imagenIE img{
