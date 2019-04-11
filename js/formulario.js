@@ -110,13 +110,17 @@ function isValido() {
  * el botón submit
  */
 function submitIn(){
-   
     if (isValido()){
-        alert("¡Gracias por tu comentario!");
-        form.addEventListener("submit");
         
+        form.addEventListener("submit", function(){
+           form.submit();
+        });
+        alert("¡Gracias por tu comentario!");
     }else{
         alert("Captcha incorrecto");
+        form.addEventListener("submit", function(event){
+           event.preventDefault();    //Una vez que se utiliza ya no responde el submit
+         });
     }
 }
 
@@ -125,8 +129,7 @@ function submitIn(){
 // Botones: 
 document.querySelector("#btnComentar").addEventListener("click", visibilizarElemento);
 document.querySelector("#btnSalir").addEventListener("click", ocultarElemento);
-let enviar = document.querySelector("#enviar");
-enviar.addEventListener("click", submitIn);
+document.querySelector("#enviar").addEventListener("click", submitIn);
 
 //Formulario ingresar comentario
 let form = document.querySelector(".formulario");
