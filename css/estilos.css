@@ -241,10 +241,9 @@ hr{
 
                                              /* --- FORMULARIO --- */
 .formulario {
-    margin: auto;
+    margin: 2% auto;
     margin-bottom: 2%;
     width: 30%;
-    height: 360px;
     visibility: hidden;
     display: none;
     background-image: url(images/estrella.gif);
@@ -255,7 +254,10 @@ hr{
 .ocultar {
     visibility: hidden;
     display: none;
+<<<<<<< HEAD
     
+=======
+>>>>>>> master
 }
 
 .mostrar {
@@ -264,30 +266,50 @@ hr{
 }
 
 #nombre, #email{
-    width: 60%;
+    width: 60;
     margin-left: 10%;
 }
 
-.formulario input, textarea{
-    display: block;
+.formulario input, .formulario textarea{
+    width: 80%;
     padding: 1%;
     margin-top: 2%;
-}
-    
-#comentario{
-    width: 80%;
     margin-left: 10%;
 }
 
+#captcha #numCaptcha{
+     display: inline-block;
+    background-color: #fff;
+    color: black;
+    border: solid 4px rgb(251, 255, 18);
+    width: 25%;
+    height: 25px;
+}
+#bloqueCaptcha{
+    background-color: #3F4053;
+    width: 60%;
+    border: solid 1px red;
+    margin: auto;
+    padding: 2%;
+}
+
+#bloqueCaptcha input{
+    width: 60%;
+}
+#captcha{
+    color: cyan;
+    font-size: 150%;
+    margin-left: 10%;
+}
 #enviar{
     width: 36%;
     background-color: red;
     color: white;
-    margin:auto;
-    margin-top: 5%;
+    margin-bottom: 4%;
+    margin-left: 30%;
 }
 
-#temporada, #capitulo{
+#temporada, #capitulo, #introducirCaptcha{
     width: 50%;
     margin-left: 10%;
 }
@@ -321,7 +343,7 @@ hr{
 }
 /*--- Tabla de capitulos---*/
 thead,td,tr{
-    background-color: snow;
+    background-color: rgba(81, 255, 0, 0.226);
 } 
 table, td, tr{
     border: 5px solid rgb(0, 90, 38);
@@ -340,10 +362,11 @@ table, td, tr{
     padding: 0% 10%;
     
 }
+.sinopsis{
+    
+}
 .imagenIE img{
-    width: 20%;
-    height: 30%;
-    margin-left: 5%;
+    width: 40%;
+    margin-left: 30%;
     margin-right: 10%;
 }
-
