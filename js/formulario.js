@@ -109,18 +109,15 @@ function isValido() {
  * Está función verifica si el captcha ingresado es valido o invalido. Para luego habilitar y deshabilitar
  * el botón submit
  */
-function submitIn(){
+function submitIn(event){
+    form.addEventListener("submit", function submit(){
+        this.preventDefault();
+    });
+
     if (isValido()){
-        
-        form.addEventListener("submit", function(){
-           form.submit();
-        });
         alert("¡Gracias por tu comentario!");
     }else{
         alert("Captcha incorrecto");
-        form.addEventListener("submit", function(event){
-           event.preventDefault();    //Una vez que se utiliza ya no responde el submit
-         });
     }
 }
 
