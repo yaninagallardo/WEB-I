@@ -125,13 +125,13 @@
             <div class="formulario">
                 <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
                 <form>
-                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" />
-                    <input id="email" type="email" name="mail" placeholder="Email" />
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required/>
+                    <input id="email" type="email" name="mail" placeholder="Email" required/>
                     <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" />
                     <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" />
                     <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8"
-                        cols="40"></textarea>
-                    <input id="enviar" type="submit" value="Enviar" />
+                        cols="40" required></textarea>
+                    <input id="enviar" type="submit" value="Enviar"/>
                 </form>
             </div>
         </div>
@@ -170,7 +170,7 @@
             </li>
         </ul>
     </footer>
-    <script src="js/mostrarOcultar.js"></script>
+    <script src="js/formulario.js"></script>
 </body>
 
 </html>
