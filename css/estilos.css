@@ -341,14 +341,15 @@ table{
     margin-left: 5%;
     margin-bottom: 5%;
     width: 90%;
+    color: rgba(60, 255, 0, 0.562);
 }
  table,td,th {
-    background-color: rgba(0, 128, 0, 0.356);
+    background-color: rgba(0, 102, 128, 0.356);
     border: 5px solid rgb(0, 90, 38);
     border-collapse: collapse;  
     
 }
-td {
+td,th {
     padding:0px 10%;
     text-align: center;
 }
