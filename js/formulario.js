@@ -110,13 +110,10 @@ function isValido() {
  * el botón submit
  */
 function submitIn(event){
-    form.addEventListener("submit", function submit(){
-        this.preventDefault();
-    });
-
     if (isValido()){
         alert("¡Gracias por tu comentario!");
     }else{
+        event.preventDefault();
         alert("Captcha incorrecto");
     }
 }
