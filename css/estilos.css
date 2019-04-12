@@ -17,6 +17,7 @@ body{
     background-size: cover;
 }
 #cuerpoPagina{
+    background-color: rgba(17, 18, 37, 0.795);
     width: 80%;
     height: 80%;
     margin: 0% 12.5%;
@@ -109,17 +110,14 @@ ul {
 
                                                 /* --- ESTILO FOOTER --- */
 footer{
-    background-color: aqua;
+    background-color: rgba(0, 102, 128, 0.356);
     width: 100%;
     height:125px;
     margin: 0%;
 }
 
-footer ul li{
-    text-decoration-line: underline;
-}
-
-.genero ul li a{
+.genero a{
+    color: #fff;
     list-style: none;
 }
 
@@ -127,6 +125,7 @@ footer ul li{
     position: relative;
     float: left;
     padding: 1.5%;
+    color: #fff;
 }
 /* -------------------estilo para página: infoArrow.html ---------------------*/
                                    
@@ -192,7 +191,6 @@ footer ul li{
  #btnCapitulo {
     font-size: 20px;
     background-color: blueviolet;
-    border-radius: 50px;
     border-color: chartreuse;
     text-decoration: none;
     color: #fff;
