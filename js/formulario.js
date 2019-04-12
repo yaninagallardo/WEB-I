@@ -109,13 +109,11 @@ function isValido() {
  * Está función verifica si el captcha ingresado es valido o invalido. Para luego habilitar y deshabilitar
  * el botón submit
  */
-function submitIn(){
-   
+function submitIn(event){
     if (isValido()){
         alert("¡Gracias por tu comentario!");
-        form.addEventListener("submit");
-        
     }else{
+        event.preventDefault();
         alert("Captcha incorrecto");
     }
 }
@@ -125,8 +123,7 @@ function submitIn(){
 // Botones: 
 document.querySelector("#btnComentar").addEventListener("click", visibilizarElemento);
 document.querySelector("#btnSalir").addEventListener("click", ocultarElemento);
-let enviar = document.querySelector("#enviar");
-enviar.addEventListener("click", submitIn);
+document.querySelector("#enviar").addEventListener("click", submitIn);
 
 //Formulario ingresar comentario
 let form = document.querySelector(".formulario");
