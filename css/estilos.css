@@ -17,7 +17,6 @@ body{
     background-size: cover;
 }
 #cuerpoPagina{
-    background-color: rgba(17, 18, 37, 0.795);
     width: 80%;
     height: 80%;
     margin: 0% 12.5%;
@@ -338,29 +337,22 @@ hr{
     font-size: 10px;
 }
 /*--- Tabla de capitulos---*/
-thead,td,tr{
-    background-color: rgba(81, 255, 0, 0.226);
-} 
-table, td, tr{
+table{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+}
+ table,td,th {
+    background-color: rgba(0, 128, 0, 0.356);
     border: 5px solid rgb(0, 90, 38);
     border-collapse: collapse;  
     
 }
-.td,.infoTabla {
+td {
+    padding:0px 10%;
     text-align: center;
 }
-.td{
-    width: 30%;
-    padding:1% 9%;
-}
-.infoTabla{
-    width: 38%;
-    padding: 0% 10%;
-    
-}
-.sinopsis{
-    
-}
+
 .imagenIE img{
     width: 40%;
     margin-left: 30%;
