@@ -108,26 +108,8 @@ ul {
     color: #fff;
 }
 
-                                                /* --- ESTILO FOOTER --- */
-footer{
-    background-color: rgba(0, 102, 128, 0.356);
-    width: 100%;
-    height:125px;
-    margin: 0%;
-}
 
-.genero a{
-    color: #fff;
-    list-style: none;
-}
-
-.genero{
-    position: relative;
-    float: left;
-    padding: 1.5%;
-    color: #fff;
-}
-/* -------------------estilo para página: infoArrow.html ---------------------*/
+/* -------------------estilo para página: infoSerie.html ---------------------*/
                                    
                                    /* --- ESTILO INFORMACION DE LA SERIE --- */
 #tituloSerie {
@@ -143,7 +125,7 @@ footer{
     width: 100%;
 }
 
-/* ---Imagen --- */
+/* ---Imagen infoSerie--- */
 #imagenPortada img{
     width: 20%;
     height: 30%;
@@ -152,6 +134,7 @@ footer{
     margin-right: 3%;
 }
 
+/* --- sinopsis en infoSerie ---*/
 #sipnosisYPersonajes{
     width: 90%;
     color: rgb(248, 248, 192);
@@ -181,7 +164,7 @@ footer{
     color: #fff;
 }
 
-/* --- Botón ver capitulos ---*/
+/* --- BOTÓN CAPÍTULOS ---*/
 
 #cajaBtnCapitulos {
     margin-left: 80%;
@@ -207,7 +190,7 @@ footer{
     color: #fff;
 }
 
-/* linea separadora de infromación y coemntarios */
+/* linea separadora de información y comentarios */
 hr{
     size: 10px;
     margin: 1% auto;
@@ -259,6 +242,7 @@ hr{
     display: block;
 }
 
+/* input formulario */
 #nombre, #email{
     width: 60;
     margin-left: 10%;
@@ -271,6 +255,7 @@ hr{
     margin-left: 10%;
 }
 
+/* --- Captcha --- */
 #captcha #numCaptcha{
      display: inline-block;
     background-color: #fff;
@@ -295,6 +280,8 @@ hr{
     font-size: 150%;
     margin-left: 10%;
 }
+
+/* BOTON SUBMIT ENVIAR */
 #enviar{
     width: 36%;
     background-color: red;
@@ -335,6 +322,18 @@ hr{
     color: gray;
     font-size: 10px;
 }
+
+                                         /* --- Páginas episodiosSerie.html ---*/
+
+/*  !!!Para el nombre de la serie utiliza el mismo estilo que el de infoSerie.html */
+
+/* imagen portada */
+.imagenIE img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 10%;
+}
+
 /*--- Tabla de capitulos---*/
 table{
     margin-left: 5%;
@@ -346,15 +345,28 @@ table{
     background-color: rgba(0, 102, 128, 0.356);
     border: 5px solid rgb(0, 90, 38);
     border-collapse: collapse;  
-    
 }
 td,th {
     padding:0px 9%;
     text-align: center;
 }
 
-.imagenIE img{
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 10%;
+                                                /* --- ESTILO FOOTER --- */
+footer{
+    background-color: rgba(0, 102, 128, 0.356);
+    width: 100%;
+    height:125px;
+    margin: 0%;
+}
+
+.genero a{
+    color: #fff;
+    list-style: none;
+}
+
+.genero{
+    position: relative;
+    float: left;
+    padding: 1.5%;
+    color: #fff;
 }

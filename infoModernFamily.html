@@ -125,13 +125,20 @@
             <div class="formulario">
                 <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
                 <form>
-                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required/>
-                    <input id="email" type="email" name="mail" placeholder="Email" required/>
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required />
+                    <input id="email" type="email" name="mail" placeholder="Email" required />
                     <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" />
                     <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" />
                     <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8"
                         cols="40" required></textarea>
-                    <input id="enviar" type="submit" value="Enviar"/>
+                        <hr/>
+                    <div id="bloqueCaptcha">
+                    <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                    <input id="introducirCaptcha" type="number" name="captcha"
+                        placeholder="Ingrese captcha" required />
+                    </div>
+                        <hr/>
+                    <input id="enviar" type="submit" value="Enviar" />
                 </form>
             </div>
         </div>
