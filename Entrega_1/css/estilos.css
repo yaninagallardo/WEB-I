@@ -1,0 +1,734 @@
+<<<<<<< Updated upstream:css/estilos.css
+/*  FUENTES */
+@font-face{
+    src: url(font/Member.otf);
+    font-family: "member";
+}
+
+/* ------------------------página de inicio: index.html -------------------- */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+                                                /*--- ESTILO BODY --- */
+body{
+    background-image: url(images/fondo-estrella.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cuerpoPagina{
+    background-color: rgba(17, 18, 37, 0.795);
+    width: 80%;
+    height: 80%;
+    margin: 0% 12.5%;
+    margin-bottom: 5%;
+}
+
+                                               /* --- ESTILO LOGO --- */
+header img{
+    width: 15%;
+    height: 15%;
+    float: left;
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+                                                 /* --- ESTILO NAV --- */
+header{
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+nav {
+    margin:12% 60%;
+    width: 60%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 180%;
+}
+
+ul {
+    list-style:none;
+}
+
+.listaNav > li {
+    float: left;
+}
+
+/* botones principales en nav*/
+.listaNav li label {
+    background-color: transparent;
+    color:#fff;
+    text-decoration:none;
+    padding: 8px 15px;
+    display: inline;
+}
+
+/* subbotones en nav */
+.seriesMenu li a {
+    background-color: rgba(9, 55, 92, 0.5);
+    color:#fff;
+    text-decoration:none;
+    padding:4px 10px;
+    display: block;
+}
+
+.listaNav li :hover {
+    background-color: rgba(100, 148, 237, 0.5);
+}
+
+.listaNav li ul {
+    display:none;
+    position:absolute;
+}
+
+.listaNav li:hover > ul {
+    display:block;
+}
+
+                                        /* --- ESTILO TITULO SERIES DESTACADAS --- */ 
+#tituloSeries{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    color: rgb(201, 255, 6);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+                                          /* ---ESTILO SERIES DESTACADAS--- */
+#listaSeries ul li{
+    display: inline;
+}
+
+#listaSeries ul li a img{
+    padding: 5% 4.75%;
+    width: 23%;
+    height: 45%;
+    color: #fff;
+}
+
+
+/* -------------------estilo para página: infoSerie.html ---------------------*/
+                                   
+                                   /* --- ESTILO INFORMACION DE LA SERIE --- */
+#tituloSerie {
+    margin-top: 10%;
+    margin-bottom: 3%;
+    text-align: center;
+    color:rgb(201, 255, 6);
+    font-size: 500%;
+    font-family: "member";
+}
+
+#infoSerie{
+    width: 100%;
+}
+
+/* ---Imagen infoSerie--- */
+#imagenPortada img{
+    width: 20%;
+    height: 30%;
+    float: left;
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+/* --- sinopsis en infoSerie ---*/
+#sipnosisYPersonajes{
+    width: 90%;
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+}
+
+/* ---Actores --- */ 
+#personajes h2 {   /* sub titulo */
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1%;
+}
+.listaActores li{
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.imagenPersonaje img{
+    width: 50%;
+    margin-left: 20%;
+}
+
+
+.imagenPersonaje p {
+    color: #fff;
+}
+
+/* --- BOTÓN CAPÍTULOS ---*/
+
+#cajaBtnCapitulos {
+    margin-left: 80%;
+    height: 10%;
+    
+}
+ #btnCapitulo {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-color: chartreuse;
+    text-decoration: none;
+    border-radius: 50px; 
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnCapitulos :hover{
+    color: gold;
+}
+
+#btnCapitulo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* linea separadora de información y comentarios */
+hr{
+    size: 10px;
+    margin: 1% auto;
+    border-color: #3F4053;
+    width: 90%;
+}
+
+/* --- BOTÓN COMENTARIOS --- */
+
+#cajaBtnComentar{
+    margin-left: 80%;
+    margin-bottom: 3%;
+    height: 10%;
+}
+
+#btnComentar {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnComentar :hover{
+    color: gold;
+}
+
+                                             /* --- FORMULARIO --- */
+.formulario {
+    margin: 2% auto;
+    margin-bottom: 2%;
+    width: 30%;
+    visibility: hidden;
+    display: none;
+    background-image: url(images/estrella.gif);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+}
+/* clases ocultar y mostrar llamados desde javascript*/
+.ocultar {
+    visibility: hidden;
+    display: none;
+}
+
+.mostrar {
+    visibility: visible;
+    display: block;
+}
+
+/* input formulario */
+#nombre, #email{
+    width: 60;
+    margin-left: 10%;
+}
+
+.formulario input, .formulario textarea{
+    width: 80%;
+    padding: 1%;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+/* --- Captcha --- */
+#captcha #numCaptcha{
+     display: inline-block;
+    background-color: #fff;
+    color: black;
+    border: solid 4px rgb(251, 255, 18);
+    width: 25%;
+    height: 25px;
+}
+#bloqueCaptcha{
+    background-color: #3F4053;
+    width: 60%;
+    border: solid 1px red;
+    margin: auto;
+    padding: 2%;
+}
+
+#bloqueCaptcha input{
+    width: 60%;
+}
+#captcha{
+    color: cyan;
+    font-size: 150%;
+    margin-left: 10%;
+}
+
+/* BOTON SUBMIT ENVIAR */
+#enviar{
+    width: 36%;
+    background-color: red;
+    color: white;
+    margin-bottom: 4%;
+    margin-left: 30%;
+}
+
+#temporada, #capitulo, #introducirCaptcha{
+    width: 50%;
+    margin-left: 10%;
+}
+
+/* --- Botón cerrar formulario ---*/
+#btnSalir{
+    width: 10%;
+    background: transparent;
+    border: transparent;
+    margin-left: 88%;
+    margin-top: 4%;
+    color: red;
+}
+
+/* --- NUEVO COMENTARIO --- */
+
+#nuevoComentario label{
+    display: block;
+    color: turquoise;
+    margin-left: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nuevoComentario span{
+    color: white;
+}
+
+#nuevoComentario #muestra {
+    color: gray;
+    font-size: 10px;
+}
+
+                                         /* --- Páginas episodiosSerie.html ---*/
+
+/*  !!!Para el nombre de la serie utiliza el mismo estilo que el de infoSerie.html */
+
+/* imagen portada */
+.imagenIE img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 10%;
+}
+
+/*--- Tabla de capitulos---*/
+table{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    color: rgba(60, 255, 0, 0.562);
+}
+ table,td,th {
+    background-color: rgba(0, 102, 128, 0.356);
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+}
+td,th {
+    padding:0px 9%;
+    text-align: center;
+}
+
+                                                /* --- ESTILO FOOTER --- */
+footer{
+    background-color: rgba(0, 102, 128, 0.356);
+    width: 100%;
+    height:125px;
+    margin: 0%;
+}
+
+.genero a{
+    color: #fff;
+    list-style: none;
+}
+
+.genero{
+    position: relative;
+    float: left;
+    padding: 1.5%;
+    color: #fff;
+=======
+/*  FUENTES */
+@font-face{
+    src: url(font/Member.otf);
+    font-family: "member";
+}
+
+/* ------------------------página de inicio: index.html -------------------- */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+                                                /*--- ESTILO BODY --- */
+body{
+    background-image: url(images/fondo-estrella.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cuerpoPagina{
+    background-color: rgba(17, 18, 37, 0.795);
+    width: 80%;
+    height: 80%;
+    margin: 0% 12.5%;
+    margin-bottom: 5%;
+}
+
+                                               /* --- ESTILO LOGO --- */
+header img{
+    width: 15%;
+    height: 15%;
+    float: left;
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+                                                 /* --- ESTILO NAV --- */
+header{
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+nav {
+    margin:12% 60%;
+    width: 60%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 180%;
+}
+
+ul {
+    list-style:none;
+}
+
+.listaNav > li {
+    float: left;
+}
+
+/* botones principales en nav*/
+.listaNav li label {
+    background-color: transparent;
+    color:#fff;
+    text-decoration:none;
+    padding: 8px 15px;
+    display: inline;
+}
+
+/* subbotones en nav */
+.seriesMenu li a {
+    background-color: rgba(9, 55, 92, 0.5);
+    color:#fff;
+    text-decoration:none;
+    padding:4px 10px;
+    display: block;
+}
+
+.listaNav li :hover {
+    background-color: rgba(100, 148, 237, 0.5);
+}
+
+.listaNav li ul {
+    display:none;
+    position:absolute;
+}
+
+.listaNav li:hover > ul {
+    display:block;
+}
+
+                                        /* --- ESTILO TITULO SERIES DESTACADAS --- */ 
+#tituloSeries{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    color: rgb(201, 255, 6);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+}
+
+                                          /* ---ESTILO SERIES DESTACADAS--- */
+#listaSeries ul li{
+    display: inline;
+}
+
+#listaSeries ul li a img{
+    padding: 5% 4.75%;
+    width: 23%;
+    height: 45%;
+    color: #fff;
+}
+
+                                                /* --- ESTILO FOOTER --- */
+footer{
+    background-color: rgba(0, 102, 128, 0.356);
+    width: 100%;
+    height:125px;
+    margin: 0%;
+}
+
+.genero a{
+    color: #fff;
+    list-style: none;
+}
+
+.genero{
+    position: relative;
+    float: left;
+    padding: 1.5%;
+    color: #fff;
+}
+/* -------------------estilo para página: infoArrow.html ---------------------*/
+                                   
+                                   /* --- ESTILO INFORMACION DE LA SERIE --- */
+#tituloSerie {
+    margin-top: 10%;
+    margin-bottom: 3%;
+    text-align: center;
+    color:rgb(201, 255, 6);
+    font-size: 500%;
+    font-family: "member";
+}
+
+#infoSerie{
+    width: 100%;
+}
+
+/* ---Imagen --- */
+#imagenPortada img{
+    width: 20%;
+    height: 30%;
+    float: left;
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+#sipnosisYPersonajes{
+    width: 90%;
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+}
+
+/* ---Actores --- */ 
+#personajes h2 {   /* sub titulo */
+    color: rgb(248, 248, 192);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1%;
+}
+.listaActores li{
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.imagenPersonaje img{
+    width: 50%;
+    margin-left: 20%;
+}
+
+
+.imagenPersonaje p {
+    color: #fff;
+}
+
+/* --- Botón ver capitulos ---*/
+
+#cajaBtnCapitulos {
+    margin-left: 80%;
+    height: 10%;
+    
+}
+ #btnCapitulo {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-color: chartreuse;
+    text-decoration: none;
+    border-radius: 50px; 
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnCapitulos :hover{
+    color: gold;
+}
+
+#btnCapitulo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* linea separadora de infromación y coemntarios */
+hr{
+    size: 10px;
+    margin: 1% auto;
+    border-color: #3F4053;
+    width: 90%;
+}
+
+/* --- BOTÓN COMENTARIOS --- */
+
+#cajaBtnComentar{
+    margin-left: 80%;
+    margin-bottom: 3%;
+    height: 10%;
+}
+
+#btnComentar {
+    font-size: 20px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 1%;
+}
+
+#cajaBtnComentar :hover{
+    color: gold;
+}
+
+                                             /* --- FORMULARIO --- */
+.formulario {
+    margin: 2% auto;
+    margin-bottom: 2%;
+    width: 30%;
+    visibility: hidden;
+    display: none;
+    background-image: url(images/estrella.gif);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+}
+/* clases ocultar y mostrar llamados desde javascript*/
+.ocultar {
+    visibility: hidden;
+    display: none;
+}
+
+.mostrar {
+    visibility: visible;
+    display: block;
+}
+
+#nombre, #email{
+    width: 60;
+    margin-left: 10%;
+}
+
+.formulario input, .formulario textarea{
+    width: 80%;
+    padding: 1%;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+#captcha #numCaptcha{
+     display: inline-block;
+    background-color: #fff;
+    color: black;
+    border: solid 4px rgb(251, 255, 18);
+    width: 25%;
+    height: 25px;
+}
+#bloqueCaptcha{
+    background-color: #3F4053;
+    width: 60%;
+    border: solid 1px red;
+    margin: auto;
+    padding: 2%;
+}
+
+#bloqueCaptcha input{
+    width: 60%;
+}
+#captcha{
+    color: cyan;
+    font-size: 150%;
+    margin-left: 10%;
+}
+#enviar{
+    width: 36%;
+    background-color: red;
+    color: white;
+    margin-bottom: 4%;
+    margin-left: 30%;
+}
+
+#temporada, #capitulo, #introducirCaptcha{
+    width: 50%;
+    margin-left: 10%;
+}
+
+/* --- Botón cerrar formulario ---*/
+#btnSalir{
+    width: 10%;
+    background: transparent;
+    border: transparent;
+    margin-left: 88%;
+    margin-top: 4%;
+    color: red;
+}
+
+/* --- NUEVO COMENTARIO --- */
+
+#nuevoComentario label{
+    display: block;
+    color: turquoise;
+    margin-left: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#nuevoComentario span{
+    color: white;
+}
+
+#nuevoComentario #muestra {
+    color: gray;
+    font-size: 10px;
+}
+/*--- Tabla de capitulos---*/
+table{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    color: rgba(60, 255, 0, 0.562);
+}
+ table,td,th {
+    background-color: rgba(0, 102, 128, 0.356);
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+    
+}
+td,th {
+    padding:0px 9%;
+    text-align: center;
+}
+
+.imagenIE img{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 10%;
+>>>>>>> Stashed changes:Entrega_1/css/estilos.css
+}
