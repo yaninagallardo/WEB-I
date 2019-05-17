@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(images/fondo-estrella.png);
+}
+/* barra de nav */
+.contenedor{
+    margin: 0;
+    padding: 0;
+}
+.listaNav :hover{
+    background-color: rgba(100, 148, 237, 0.5);
+}
+ul{
+    list-style: none;
+    display:none;
+}
+li a {
+    background-color: rgba(9, 55, 92, 0.5);
+    text-decoration:none;
+    padding:4px 10px;
+}
+
+/*imagenes index*/
+.img{
+    margin:9%;
+    padding:7%;    
+}
+h1{
+    font-size: 100%;
+}
