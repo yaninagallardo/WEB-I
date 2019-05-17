@@ -1,32 +1,67 @@
 *{
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 body{
     background-image: url(images/fondo-estrella.png);
 }
 /* barra de nav */
-.contenedor{
-    margin: 0;
-    padding: 0;
+nav{
+    float: right;
 }
 .listaNav :hover{
     background-color: rgba(100, 148, 237, 0.5);
 }
 ul{
     list-style: none;
-    display:none;
 }
 li a {
     background-color: rgba(9, 55, 92, 0.5);
     text-decoration:none;
     padding:4px 10px;
 }
-
+/*logo*/
+.logo{
+    width: 20%;
+    height: 15%;
+    float: left;
+    margin-left: 7%;
+    margin-top: 1%;
+    
+}
+/*titulo*/
+.tituloserie{  
+  color: yellow;
+}
 /*imagenes index*/
+#padreImagenes{
+    margin-top: 40px;
+}
 .img{
-    margin:9%;
-    padding:7%;    
+    margin-left: 15%;
+}
+.row{
+    margin-top: 10px;
+}
+#tamanioImagen{
+    margin-top:20px;
+    height: 250px;
+    width: 300px;
 }
 h1{
     font-size: 100%;
+}
+@media only screen and (min-width:600px){
+/*logo*/
+    .logo{
+        width: 15%;
+        margin-left:3%;
+        margin-top: 10px;
+        
+    }
+/*titulo*/
+#tituloSeries{  
+  color: yellow;
+}
+
 }
