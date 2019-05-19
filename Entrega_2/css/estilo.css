@@ -1,67 +1,84 @@
 *{
-    margin:0;
-    padding:0;
+    padding: 0;
+    border: 0;
 }
 body{
-    background-image: url(images/fondo-estrella.png);
+    background-image: url(images/fondo-estrella.png)
 }
-/* barra de nav */
+/*Barra nav*/
 nav{
     float: right;
+    font-size:18px;
+    margin-top: 0;
 }
-.listaNav :hover{
-    background-color: rgba(100, 148, 237, 0.5);
-}
-ul{
-    list-style: none;
-}
-li a {
-    background-color: rgba(9, 55, 92, 0.5);
-    text-decoration:none;
-    padding:4px 10px;
+li a :hover{
+    background-color: rgba(9,55,92,0.5);
 }
 /*logo*/
 .logo{
-    width: 20%;
-    height: 15%;
-    float: left;
-    margin-left: 7%;
-    margin-top: 1%;
-    
+    width: 15%;
+    height: 20%;
+    margin-right: 0;
 }
-/*titulo*/
-.tituloserie{  
-  color: yellow;
-}
-/*imagenes index*/
-#padreImagenes{
-    margin-top: 40px;
-}
-.img{
-    margin-left: 15%;
-}
-.row{
-    margin-top: 10px;
-}
-#tamanioImagen{
-    margin-top:20px;
-    height: 250px;
+/*imagenes Index*/
+.card{
     width: 300px;
 }
-h1{
-    font-size: 100%;
+.altura{
+    height: 200px;
+    width: 299px;
+}
+#margenImgIndex{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+/*Titulo*/
+.titulo{
+    color: rgb(229, 255, 0);
+    margin-left: 9%;
+    margin-top: 3%;
+}
+.listaFooter{
+    margin-left:5%;
+    display: inline;
+}
+#sociaFooter{
+    color:  rgb(0, 119, 255);
+    margin-left: 5%;
+}
+.listaFooter,#sociaFooter{
+    font-size: 20px;
 }
 @media only screen and (min-width:600px){
-/*logo*/
-    .logo{
-        width: 15%;
-        margin-left:3%;
-        margin-top: 10px;
-        
+    /*Barra nav*/
+    nav{
+        font-size:35px;
+        margin-left: 150px;
     }
-/*titulo*/
-#tituloSeries{  
-  color: yellow;
-}
-
+    nav,.logo{
+        float: left;
+    }
+    /*logo*/
+    .logo{
+        margin-right: 0;
+    }
+    #categoriaNav{
+        font-size: 25px;
+        color: dodgerblue;
+    }
+    /*Imagenes index*/
+    #margenImgIndex{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    ul.row{
+        margin-left: 100px;
+    }
+   /*Titulo*/
+    .titulo{
+        margin-top: 100px;
+        margin-left:25%;
+        font-size: 80px;
+        clear: both;
+    }
 }
