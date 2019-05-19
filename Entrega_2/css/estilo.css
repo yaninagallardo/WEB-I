@@ -1,3 +1,9 @@
+/*  FUENTES */
+@font-face{
+    src: url(font/Member.otf);
+    font-family: "member";
+}
+
 *{
     padding: 0;
     border: 0;
@@ -82,3 +88,78 @@ li a :hover{
         clear: both;
     }
 }
+
+#formTabla{
+    width: 27%;
+}
+
+} /*FIN MEDIDA PANTALLA*/
+
+/*--- Tabla de capitulos---*/
+.imagenPortada{
+    width: 40%;
+    margin: 3% 30%;
+
+}
+#tituloSerie {
+    margin-top: 10%;
+    text-align: center;
+    color:rgb(201, 255, 6);
+    font-size: 500%;
+    font-family: "member";
+}
+
+table{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    color: rgba(60, 255, 0, 0.856);
+}
+
+ table,th, td {
+    background-color: rgba(0, 102, 128, 0.356);
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+    padding: 10px;
+    text-align: center;
+}
+
+th, tbody {
+    text-align: center;
+}    
+
+/*estilo botones en pagina con tabla*/
+.btn-tabla, .enviarCap{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    display: block;
+
+    font-size: 16px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5%;
+}
+
+
+/*FORMULARIO DE LA PÁGINA TABLA*/
+
+#formTabla{
+    margin: auto;
+    margin-bottom: 10%;
+    padding: 2%;
+    /*width: 50%;*/
+    background-color:rgba(2, 80, 99, 0.719);
+}
+
+input, textarea{
+    display: block;
+    margin-bottom: 1%;
+    width: 90%;
+}
+
+
+
+
