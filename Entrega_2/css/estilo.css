@@ -166,14 +166,19 @@ table{
 
 th, tbody {
     text-align: center;
-}    
+}   
+
+/*LLAMADA DESDE JS FILA DESTACADA*/
+.destacado{
+    background-color: rgba(163, 223, 135, 0.712);
+    color: #fff;
+}
 
 /*estilo botones en pagina con tabla*/
 .btn-tabla, .enviarCap{
     margin-left: 5%;
     margin-bottom: 2%;
     display: block;
-
     font-size: 16px;
     background-color: blueviolet;
     border-radius: 50px;
@@ -182,6 +187,12 @@ th, tbody {
     color: #fff;
     padding: 0.5%;
 }
+
+form .enviarCap{
+    margin: 5% auto;
+    width: 50%;
+}
+
 /* input formulario */
 #nombre, #email{
     width: 60;
@@ -223,10 +234,9 @@ th, tbody {
 /*FORMULARIO DE LA PÁGINA TABLA*/
 
 #formTabla{
-    margin: auto;
+    margin: 3% auto;
     margin-bottom: 10%;
     padding: 2%;
-    /*width: 50%;*/
     background-color:rgba(2, 80, 99, 0.719);
 }
 
