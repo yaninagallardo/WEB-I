@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
     "use strict"
     agregar();
-
-    // BOTONES: 
-    //BOTON AGREGAR 3 capitulos
-    document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);
-
-    //BOTON ELIMINAR FILAS DE LA LISTA
-    document.querySelector("#btn-eliminar").addEventListener("click", vaciarFilas);
-
-    //inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
-    document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm);
-
 });
+// BOTONES: 
+//BOTON AGREGAR 3 capitulos
+document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);
+
+//BOTON ELIMINAR FILAS DE LA LISTA
+document.querySelector("#btn-eliminar").addEventListener("click", vaciarFilas);
+
+//inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
+document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm);
+
+// trae del DOM cuerpo de la tabla
+let cuerpoTabla = document.querySelector("#cuerpoTabla");
 
 let indice = 0;  //indice correspondiente a la posición en el arreglo serie, para mostrar la fila nueva.
-
 /**
  * Json objeto de filas en la tabla
  */
@@ -39,21 +39,21 @@ let tempMax = 0;
 let capMax = 0;
 let ultimaFila = [];
 function destacado(fila) {
-    
-    if (filaNueva.serie[indice].numTemporada > tempMax){
+
+    if (filaNueva.serie[indice].numTemporada > tempMax) {
         tempMax = filaNueva.serie[indice].numTemporada;
         capMax = filaNueva.serie[indice].numCapitulo;
-        
+
         destacarFila(fila);
-    } else if(filaNueva.serie[indice].numTemporada == tempMax){
-        if (filaNueva.serie[indice].numCapitulo > capMax){
+    } else if (filaNueva.serie[indice].numTemporada == tempMax) {
+        if (filaNueva.serie[indice].numCapitulo > capMax) {
             capMax = filaNueva.serie[indice].numCapitulo;
 
             destacarFila(fila);
         }
     }
 
-    function destacarFila(fila){
+    function destacarFila(fila) {
         for (let f of ultimaFila) {
             f.classList.remove("destacado");
         }
@@ -86,7 +86,7 @@ let capitulo = document.querySelector(".num-cap");
 let temporada = document.querySelector(".num-tem");
 let tit = document.querySelector(".tituloSerie");
 let emision = document.querySelector(".fecha-emision");
-let sinop = document.querySelector(".sinopsis");
+let sinop = document.querySelector(".sinopsisCap");
 
 /**
  * recupera datos de los input del formulario
@@ -138,7 +138,7 @@ function agregar() {
 
     destacado(cuerpoTabla.lastChild);
     indice++;
-    
+
 }
 
 /**
@@ -156,5 +156,3 @@ function vaciarFilas() {
     console.log("indice despues de borrado:" + filaNueva.serie.length);
 }
 
-// trae del DOM cuerpo de la tabla
-let cuerpoTabla = document.querySelector("#cuerpoTabla");
