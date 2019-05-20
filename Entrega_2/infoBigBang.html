@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>WikiSeries</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+                <img src="images/logo1.png" class="logo">
+        </a>
+    <nav class="navbar-default">
+        <ul class="nav nav-pills">
+            <li>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accion</a>
+                    <div class="dropdown-menu ">
+                            <a class="dropdown-item" id="categoriaNav" href="infoArrow.html">Arrow</a>
+                            <a class="dropdown-item" id="categoriaNav" href="infoChicagoPD.html">Chicago P.D</a>
+                    </div>
+            </li>
+            <li>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Terror</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="categoriaNav" href="infoStrangerThings.html">Stranger Things</a>
+                        <a class="dropdown-item" id="categoriaNav" href="infoSupernatural.html">Supernatural</a>
+                    </div>
+            </li>
+            <li>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Comedia</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="categoriaNav" href="infoBigBang.html">The BigBang Theory</a>
+                        <a class="dropdown-item" id="categoriaNav" href="infoModernFamily.html">Mordern Family</a>
+                    </div>
+                </li>
+            </ul>
+    </nav>
+</header>
+<div id="cuerpoPagina">
+    <h1 id="tituloSerie">The BigBang Theory</h1>
+    <img src="images/bigBang-portada-horizontal.png" class="altura" id="imagenInfo">
+    <div class="sinopsis">
+        <h2>Sinopsis</h2>
+        <p>La vida de dos de estos peculiares personajes, Leonard Hofstadter y Sheldon Cooper, cambia radicalmente cuando
+            Penny, una atractiva camarera, se convierte en su nueva vecina. El
+            simple hecho de una presencia femenina al otro lado del pasillo se convierte en todo un desafío
+            para ellos y principal causa de todo tipo de situaciones disparatadas.
+            No menos entretenidas son las visitas de los otros dos incondicionales miembros del grupo,
+            Howard Wolowitz y Rajesh Koothrappali, quienes
+            acostumbran a pasar una gran cantidad de tiempo en el piso de sus amigos. El primero de ellos es
+            amante de los cómics y superhéroes, conoce cinco idiomas y siente devoción por el género
+            femenino, mientras el segundo sufre de vejiga hiperactiva y nunca, bajo ninguna circunstancia,
+            habla en presencia de mujeres o les dirige la palabra.</p>
+    </div>
+    <div class="personajes">
+        <h2 class="tituloActores">Actores</h2>
+        <ul class="row">
+            <li>
+                <img src="images/actores/johnnyGalecki.png" alt="johny Galecki" class="imagenesActores">
+                <p class="nombreActores">johny Galecki</p>
+            </li>
+            <li>
+                <img src="images/actores/kaleyCuoco.png" alt="Kaley Couco" class="imagenesActores">
+                <p class="nombreActores">Kaley Couco</p>
+            </li>
+            <li>
+                <img src="images/actores/jimParson.png" alt="jim Parson" class="imagenesActores">
+                <p class="nombreActores">jim Parson</p>
+            </li>
+        </ul>
+    </div>
+    <div id="cajaBtnCapitulos">
+            <button id="btnCapitulo"><a href="episodiosBigBang.html">Capítulos</a></button>
+    </div>
+</div>
+<!--No anda Formulario-->
+<div class="formulario">
+        <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+        <form>
+            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required >
+            <input id="email" type="email" name="mail" placeholder="Email" required >
+            <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" >
+            <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" >
+            <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40" required></textarea>
+            <div id="bloqueCaptcha">
+                <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+            </div>
+            <input id="enviar" type="submit" value="Enviar" />
+        </form>
+</div>
+<footer class="row">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                <div class="footer-widget">
+                    <div class="footer-title" id="sociaFooter">Social</div>
+                        <ul class="list-unstyled">
+                            <li class="listaFooter"><a href="#">Twitter</a></li>
+                            <li class="listaFooter"><a href="#"> Google +</a></li>
+                            <li class="listaFooter"><a href="#">Facebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
+<script src="js/formulario.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

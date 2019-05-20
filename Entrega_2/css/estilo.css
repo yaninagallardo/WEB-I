@@ -288,4 +288,7 @@ input, textarea{
     .imagenesActores{
         margin-right: 25px;
     }
+    #tituloSerie{
+        font-size: 97px;
+    }
 }
