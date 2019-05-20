@@ -35,7 +35,6 @@ let filaNueva = {
  * 
  * @param fila (ultima agregada desde la función agregar())
  */
-let fecha = 0;
 let tempMax = 0;
 let capMax = 0;
 let ultimaFila = [];
@@ -62,23 +61,6 @@ function destacado(fila) {
         fila.classList.add("destacado");
         ultimaFila.push(fila);
     }
-
-
-
-/*
-    if (filaNueva.serie[indice].fechaEmision >= fecha) {
-            if (fecha != 0) {
-                for (let f of ultimaFila) {
-                    f.classList.remove("destacado");
-                }
-            }
-            fecha = filaNueva.serie[indice].fechaEmision;
-
-            fila.classList.add("destacado");
-            ultimaFila.push(fila);
-        
-    }
-    console.log("fecha " + filaNueva.serie[indice].fechaEmision);*/
 }
 
 /**
