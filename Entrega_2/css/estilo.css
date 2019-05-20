@@ -240,7 +240,7 @@ form .enviarCap{
     background-color:rgba(2, 80, 99, 0.719);
 }
 
-input, textarea{
+input, .sinopsisCap{
     display: block;
     margin-bottom: 1%;
     width: 90%;
