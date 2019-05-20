@@ -267,4 +267,25 @@ input, textarea{
         font-size: 80px;
         clear: both;
     }
+    /*Html De info*/
+    #cuerpoPagina{
+        width:80%;
+        margin-left: 150px;
+        margin-right: 250px;
+        clear: both;
+    }
+    #imagenInfo{
+        width: 700px;
+        height: 400px;
+        margin-left: 150px;
+    }
+    .personajes{
+        margin-left: 300px;
+    }
+    .tituloActores{
+        font-size: 60px;
+    }
+    .imagenesActores{
+        margin-right: 25px;
+    }
 }
