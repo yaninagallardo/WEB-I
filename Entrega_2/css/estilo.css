@@ -9,7 +9,7 @@
     border: 0;
 }
 body{
-    background-image: url(images/fondo-estrella.png)
+    background-image: url(images/fondo-estrella.png);
 }
 /*Barra nav*/
 nav{
@@ -38,6 +38,10 @@ li a :hover{
     margin-top: 10%;
     margin-left: 10%;
 }
+#imagenInfo{
+    margin-left: 30px;
+}
+
 /*Titulo*/
 .titulo{
     color: rgb(229, 255, 0);
@@ -54,6 +58,182 @@ li a :hover{
 }
 .listaFooter,#sociaFooter{
     font-size: 20px;
+}
+#formTabla{
+    width: 27%;
+}
+/*cuerpo de la pagina de info*/
+#cuerpoPagina{
+    background-color: rgba(17, 18, 37, 0.795);
+    width:370px;
+    height:80%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+/*Titulo de info*/
+#tituloSerie{
+        margin-top: 3%;
+        text-align: center;
+        color:rgb(201, 255, 6);
+        font-size: 500%;
+        font-family: "member";
+}
+/*Sinopsis de la info*/
+.sinopsis{
+    margin-left: 10px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.sinopsis h2{
+    color: greenyellow;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif
+}
+/*nombre de personajes de la info*/
+.nombreActores,.tituloActores{
+    color: #fff;
+    font-family: cursive;
+    margin-right: 10px;
+}
+.personajes .row,.tituloActores{
+    margin-left: 20px;
+}
+ul li{
+    list-style:none;
+}
+/* --- BOTÓN CAPÍTULOS ---*/
+
+#cajaBtnCapitulos {
+    margin-left:75%;
+    height: 10%;    
+}
+ #btnCapitulo {
+    font-family: cursive;
+    font-size: 20px;
+    background-color: blueviolet;
+    border-radius:10px; 
+    color: #fff;
+    padding: 3%;
+}
+
+#cajaBtnCapitulos :hover{
+    color: gold;
+}
+
+#btnCapitulo a{
+    color: #fff;
+}
+/*Formulario de las info.html*/
+.formulario {
+    margin: 2% auto;
+    margin-bottom: 2%;
+    width: 30%;
+    visibility: visible;
+    display: none;
+    background-image: url(images/fondo-estrella.png);
+    background-repeat: no-repeat;
+    border: solid 1px grey;
+}
+/* clases ocultar y mostrar llamados desde javascript*/
+.ocultar {
+    visibility: hidden;
+    display: none;
+}
+
+.mostrar {
+    visibility: visible;
+    display: block;
+}
+
+/*FIN MEDIDA PANTALLA*/
+
+/*--- Tabla de capitulos---*/
+table{
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    color: rgba(60, 255, 0, 0.856);
+}
+
+ table,th, td {
+    background-color: rgba(0, 102, 128, 0.356);
+    border: 5px solid rgb(0, 90, 38);
+    border-collapse: collapse;  
+    padding: 10px;
+    text-align: center;
+}
+
+th, tbody {
+    text-align: center;
+}    
+
+/*estilo botones en pagina con tabla*/
+.btn-tabla, .enviarCap{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    display: block;
+
+    font-size: 16px;
+    background-color: blueviolet;
+    border-radius: 50px;
+    border-color: chartreuse;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5%;
+}
+/* input formulario */
+#nombre, #email{
+    width: 60;
+    margin-left: 10%;
+}
+
+.formulario input, .formulario textarea{
+    width: 80%;
+    padding: 1%;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+/* --- Captcha --- */
+#captcha #numCaptcha{
+    display: inline-block;
+   background-color: #fff;
+   color: black;
+   border: solid 4px rgb(251, 255, 18);
+   width: 25%;
+   height: 25px;
+}
+#bloqueCaptcha{
+   background-color: #3F4053;
+   width: 60%;
+   border: solid 1px red;
+   margin: auto;
+   padding: 2%;
+}
+
+#bloqueCaptcha input{
+   width: 60%;
+}
+#captcha{
+   color: cyan;
+   font-size: 150%;
+   margin-left: 10%;
+}
+
+/*FORMULARIO DE LA PÁGINA TABLA*/
+
+#formTabla{
+    margin: auto;
+    margin-bottom: 10%;
+    padding: 2%;
+    /*width: 50%;*/
+    background-color:rgba(2, 80, 99, 0.719);
+}
+
+input, textarea{
+    display: block;
+    margin-bottom: 1%;
+    width: 90%;
 }
 @media only screen and (min-width:600px){
     /*Barra nav*/
@@ -88,78 +268,3 @@ li a :hover{
         clear: both;
     }
 }
-
-#formTabla{
-    width: 27%;
-}
-
-} /*FIN MEDIDA PANTALLA*/
-
-/*--- Tabla de capitulos---*/
-.imagenPortada{
-    width: 40%;
-    margin: 3% 30%;
-
-}
-#tituloSerie {
-    margin-top: 10%;
-    text-align: center;
-    color:rgb(201, 255, 6);
-    font-size: 500%;
-    font-family: "member";
-}
-
-table{
-    margin-left: 5%;
-    margin-bottom: 5%;
-    width: 90%;
-    color: rgba(60, 255, 0, 0.856);
-}
-
- table,th, td {
-    background-color: rgba(0, 102, 128, 0.356);
-    border: 5px solid rgb(0, 90, 38);
-    border-collapse: collapse;  
-    padding: 10px;
-    text-align: center;
-}
-
-th, tbody {
-    text-align: center;
-}    
-
-/*estilo botones en pagina con tabla*/
-.btn-tabla, .enviarCap{
-    margin-left: 5%;
-    margin-bottom: 2%;
-    display: block;
-
-    font-size: 16px;
-    background-color: blueviolet;
-    border-radius: 50px;
-    border-color: chartreuse;
-    text-decoration: none;
-    color: #fff;
-    padding: 0.5%;
-}
-
-
-/*FORMULARIO DE LA PÁGINA TABLA*/
-
-#formTabla{
-    margin: auto;
-    margin-bottom: 10%;
-    padding: 2%;
-    /*width: 50%;*/
-    background-color:rgba(2, 80, 99, 0.719);
-}
-
-input, textarea{
-    display: block;
-    margin-bottom: 1%;
-    width: 90%;
-}
-
-
-
-
