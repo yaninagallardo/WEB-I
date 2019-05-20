@@ -28,6 +28,58 @@ let filaNueva = {
         "sinopsis": "Oliver acude a Laurel cuando descubre que lleva un proceso contra Martin Somers"
     }]
 };
+/**
+ * guarda el numero del ultima temporada y capitulo para destacar en la tabla 
+ * En el array ultimaFila guarda las filas que usaron la clase destacado 
+ * para ser removidas en caso de ya no umplir con la condición
+ * 
+ * @param fila (ultima agregada desde la función agregar())
+ */
+let fecha = 0;
+let tempMax = 0;
+let capMax = 0;
+let ultimaFila = [];
+function destacado(fila) {
+    
+    if (filaNueva.serie[indice].numTemporada > tempMax){
+        tempMax = filaNueva.serie[indice].numTemporada;
+        capMax = filaNueva.serie[indice].numCapitulo;
+        
+        destacarFila(fila);
+    } else if(filaNueva.serie[indice].numTemporada == tempMax){
+        if (filaNueva.serie[indice].numCapitulo > capMax){
+            capMax = filaNueva.serie[indice].numCapitulo;
+
+            destacarFila(fila);
+        }
+    }
+
+    function destacarFila(fila){
+        for (let f of ultimaFila) {
+            f.classList.remove("destacado");
+        }
+
+        fila.classList.add("destacado");
+        ultimaFila.push(fila);
+    }
+
+
+
+/*
+    if (filaNueva.serie[indice].fechaEmision >= fecha) {
+            if (fecha != 0) {
+                for (let f of ultimaFila) {
+                    f.classList.remove("destacado");
+                }
+            }
+            fecha = filaNueva.serie[indice].fechaEmision;
+
+            fila.classList.add("destacado");
+            ultimaFila.push(fila);
+        
+    }
+    console.log("fecha " + filaNueva.serie[indice].fechaEmision);*/
+}
 
 /**
  * Función que reponde al metodo agregar 3 filas a la tabla
@@ -36,11 +88,11 @@ function agregar3filas() {
     event.preventDefault();
     for (let i = 1; i <= 3; i++) {
         let nuevo = {
-            "numCapitulo": i,
-            "numTemporada": 3,
+            "numCapitulo": Math.floor(Math.random() * (20) + 1),
+            "numTemporada": Math.floor(Math.random() * (10) + 1),
             "titulo": "Piloto",
             "fechaEmision": "2014/2/10",
-            "sinopsis": "sinop.value",
+            "sinopsis": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         }
         filaNueva.serie.push(nuevo);
         agregar();
@@ -50,7 +102,7 @@ function agregar3filas() {
 //inputs de HTML correpondientes al formulario
 let capitulo = document.querySelector(".num-cap");
 let temporada = document.querySelector(".num-tem");
-let tit = document.querySelector(".titulo");
+let tit = document.querySelector(".tituloSerie");
 let emision = document.querySelector(".fecha-emision");
 let sinop = document.querySelector(".sinopsis");
 
@@ -102,8 +154,9 @@ function agregar() {
     celda4.appendChild(texto4);
     celda5.appendChild(texto5);
 
+    destacado(cuerpoTabla.lastChild);
     indice++;
-    console.log("agregar " + indice);
+    
 }
 
 /**
@@ -113,11 +166,12 @@ function agregar() {
 
 function vaciarFilas() {
     filaNueva.serie = [];
+    ultimaFila = [];
     cuerpoTabla.innerHTML = "";
-    indice=0;
+    indice = 0;
 
     console.log("arreglo borrado" + filaNueva.serie);
-    console.log("indice despues de borrado:" + filaNueva.serie.length) ;
+    console.log("indice despues de borrado:" + filaNueva.serie.length);
 }
 
 // trae del DOM cuerpo de la tabla
