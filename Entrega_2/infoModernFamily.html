@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/estilo.css">
     <title>WikiSeries</title>
 </head>
 
@@ -46,36 +46,64 @@
             </ul>
         </nav>
     </header>
-    <article>
-        <img id="imagenTabla" src="images//bigBang-portada-horizontal.png" alt="The Big Bang Theory">
-        <table class="tabla">
-            <thead>
-                <tr>
-                    <th>Capítulo</th>
-                    <th>Temporada</th>
-                    <th>Título</th>
-                    <th>Fecha de emisión</th>
-                    <th>Sinopsis</th>
-                </tr>
-            </thead>
-            <tbody id="cuerpoTabla">
-                <!--código desde js-->
-            </tbody>
-        </table>
-        <button class="btn-tabla" id="btn-agregar3">Agregar 3 capítulos</button>
-        <button class="btn-tabla" id="btn-eliminar">Eliminar capítulos</button>
+    <div id="cuerpoPagina">
+        <h1 id="tituloSerie">Modern Family</h1>
+        <img src="images/modernFamily-portada-horizontal.png" id="imagenInfo">
+        <div class="sinopsis">
+            <h2>Sinopsis</h2>
+            <p>La serie está concebida como falso documental, hecho que notamos tanto en los
+                movimientos de cámara como en las numerosas ocasiones en que los protagonistas se dirigen
+                directamente a ella.La primera de las familias está formada por Jay Pritchett ,
+                que con más de 60 años está casado con una despampanante mujer latina llamada Gloria Pritchett
+                -posteriormente Delgado- y que convive además con el hijo de esta -fruto de su anterior matrimonio-
+                llamado Manny. Por otro
+                lado, tenemos a una pareja gay formada por Cam y Mitchell, que acaban de adoptar a una pequeña niña en
+                Vietnam a la
+                que han llamado Lily.La última de las tres familias está formada por Phil Dunphy, Claire Dunphy y sus
+                tres hijos: Haley, Alex y Luke. El padre intenta ser siempre el 'papá guay' en contraposición a la
+                madre, que
+                es sobreprotectora y controladora donde las haya.</p>
+        </div>
+        <div class="personajes">
+            <h2 class="tituloActores">Actores</h2>
+            <ul class="row">
+                <li>
+                    <img src="images/actores/sofiaVergara.png" alt="sofia Vergara" class="imagenesActores">
+                    <p class="nombreActores">Sofia Vergara</p>
+                </li>
+                <li>
+                    <img src="images/actores/julieBowen.png" alt="Julie Bowen" class="imagenesActores">
+                    <p class="nombreActores">Julie Bowen</p>
+                </li>
+                <li>
+                    <img src="images/actores/edOneill.png" alt="ed Oneill" class="imagenesActores">
+                    <p class="nombreActores">Ed Oneill</p>
+                </li>
+            </ul>
+        </div>
+        <div class="row" id="botonesFormularioComentario">
+            <button id="btnCapitulo"><a href="episodiosModernFamily.html">Capítulos</a></button>
+            <button id="btnComentar">Comentar</button>
+        </div>
+    </div>
 
-        <form id="formTabla">
-            <input class="num-cap" type="number" name="num-cap" placeholder="N° Capitulo" value="" required />
-            <input class="num-tem" type="number" name="num-tem" placeholder="N° Temporada" value="" required />
-            <input class="tituloSerie" type="text" name="titulo" placeholder="Título" required />
-            <input class="fecha-emision" type="date" name="fecha-emision" placeholder="Fecha de emisión" />
-            <textarea class="sinopsisCap" name="sinopsis" placeholder="Sinopsis del capitulo" rows="8" cols="40"
+    <div class="formulario">
+        <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+        <form>
+            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
+            <input id="email" type="email" name="mail" placeholder="Email" required>
+            <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
+            <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
+            <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
                 required></textarea>
-            <input class="enviarCap" type="submit" value="Enviar" />
+            <div id="bloqueCaptcha">
+                <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+            </div>
+            <input id="enviar" type="submit" value="Enviar" />
         </form>
-    </article>
-    <footer>
+    </div>
+    <footer class="row">
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
             <div class="footer-widget">
                 <div class="footer-title" id="sociaFooter">Social</div>
@@ -87,8 +115,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/comportamiento.js"></script>
+    <script src="js/formulario.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -98,7 +125,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

@@ -6,8 +6,7 @@
  */
 function visibilizarElemento() {
     cargarFormulario();
-    form.classList.add("mostrar");
-    form.classList.remove("ocultar");
+    form.classList.toggle("mostrar");
 }
 
 /**
@@ -138,9 +137,3 @@ let temporada = document.querySelector("#temporada");
 let capitulo = document.querySelector("#capitulo");
 let comentario = document.querySelector("#comentario");
 let numCaptcha = document.querySelector("#numCaptcha");
-
-//Carga de comentario de muestra
-document.querySelector("#nameRandom").innerHTML = nombreAleatorio();
-document.querySelector("#tempRandom").innerHTML = temporadaAleatorio();
-document.querySelector("#capRandom").innerHTML = capituloAleatorio();
-document.querySelector("#comentRandom").innerHTML = comentarioAleatorio();
