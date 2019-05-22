@@ -70,25 +70,31 @@
             </li>
         </ul>
     </div>
-    <div id="cajaBtnCapitulos">
+    <div class="row" id="botonesFormularioComentario">
+        <div id="cajaBtnCapitulos ">
             <button id="btnCapitulo"><a href="episodiosArrow.html">Capítulos</a></button>
+        </div>
+        <div id="cajaBtnComentar">
+             <button id="btnComentar">Comentar</button>
+        </div>
     </div>
 </div>
-<!--No anda Formulario-->
-<div class="formulario">
-        <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
-        <form>
-            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required >
-            <input id="email" type="email" name="mail" placeholder="Email" required >
-            <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" >
-            <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" >
-            <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40" required></textarea>
-            <div id="bloqueCaptcha">
-                <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
-                <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
-            </div>
-            <input id="enviar" type="submit" value="Enviar" />
-        </form>
+<div id="comentarios">
+    <div class="formulario">
+            <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+            <form>
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required >
+                <input id="email" type="email" name="mail" placeholder="Email" required >
+                <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada" >
+                <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo" >
+                <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40" required></textarea>
+                <div id="bloqueCaptcha">
+                    <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                    <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+                </div>
+                <input id="enviar" type="submit" value="Enviar" />
+            </form>
+    </div>
 </div>
 <footer class="row">
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
@@ -98,12 +104,9 @@
                             <li class="listaFooter"><a href="#">Twitter</a></li>
                             <li class="listaFooter"><a href="#"> Google +</a></li>
                             <li class="listaFooter"><a href="#">Facebook</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                        </ul>
                 </div>
             </div>
-        </div>
 </footer>
 <script src="js/formulario.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
