@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-    "use strict"
-    agregar();
-});
+"use strict"
+
+//DOM
+document.addEventListener("DOMContentLoaded", agregar);
+
 // BOTONES: 
 //BOTON AGREGAR 3 FILAS CARGADAS
 document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);

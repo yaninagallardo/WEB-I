@@ -23,84 +23,92 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Accion</a>
                     <div class="dropdown-menu ">
-                        <a class="dropdown-item" id="categoriaNav" href="infoArrow.html">Arrow</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoChicagoPD.html">Chicago P.D</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosArrow.html">Arrow</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosChicagoPD.html">Chicago P.D</a>
                     </div>
                 </li>
                 <li>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Terror</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="infoStrangerThings.html">Stranger Things</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoSupernatural.html">Supernatural</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosStrangerThings.html">Stranger
+                            Things</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosSupernatural.html">Supernatural</a>
                     </div>
                 </li>
                 <li>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Comedia</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="infoBigBang.html">The BigBang Theory</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoModernFamily.html">Mordern Family</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosBigBang.html">The BigBang Theory</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosModernFamily.html">Mordern Family</a>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <div id="cuerpoPagina">
-        <h1 id="tituloSerie">Stranger Things</h1>
-        <img src="images/strager-portada-horizontal.png" id="imagenInfo">
-        <div class="sinopsis">
-            <h2>Sinopsis</h2>
-            <p>'Stranger Things' es una serie nostálgica de acción y misterio creada y dirigida por los hermanos
-                Matt y Ross Duffer. La serie está ambientada en Indiana a principios de los años 80 y es un
-                homenaje a las películas de la época. Protagonizada por Winona Ryder, David Harbour, Finn
-                Wolfhard, Millie Bobby Brown, Gaten Matarazzo y Caleb McLaughlin, 'Stranger Things' se ha
-                convertido ya en una serie de culto y en una de las series más aclamadas de Netflix.
-                La historia comienza el 6 de noviembre de 1983 en la pequeña ciudad de Hawkings, cuando el joven
-                Will Byers desaparece de manera misteriosa. Joyce, la preocupada madre de Will, inicia su
-                búsqueda mientras que el jefe de policía Jim Hopper y sus tres amigos -Dustin, Mike y Lucas-
-                inician una investigación paralela para intentar encontrar a Will. Los más jóvenes se encuentran
-                en la búsqueda con 011, una chica misteriosa con poderes de telequinesis que asegura saber dónde
-                está Will.</p>
-        </div>
-        <div class="personajes">
-            <h2 class="tituloActores">Actores</h2>
-            <ul class="row">
-                <li>
-                    <img src="images/actores/milliwBobbyBown.png" alt="millie Bobby Bown" class="imagenesActores">
-                    <p class="nombreActores">millie Bobby Bown</p>
-                </li>
-                <li>
-                    <img src="images/actores/winonaRyder.png" alt="winona Ryder" class="imagenesActores">
-                    <p class="nombreActores">Winona Ryder</p>
-                </li>
-                <li>
-                    <img src="images/actores/noahSchnapp.png" alt="noah Schnapp" class="imagenesActores">
-                    <p class="nombreActores">Noah Schnapp</p>
-                </li>
-            </ul>
-        </div>
-        <div class="row" id="botonesFormularioComentario">
-            <button id="btnCapitulo"><a href="episodiosStrangerThings.html">Capítulos</a></button>
-            <button id="btnComentar">Comentar</button>
-        </div>
-    </div>
-    <div class="formulario">
-        <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
-        <form>
-            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
-            <input id="email" type="email" name="mail" placeholder="Email" required>
-            <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
-            <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
-            <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
-                required></textarea>
-            <div id="bloqueCaptcha">
-                <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
-                <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+    <article>
+        <div id="cuerpoPagina">
+            <h1 id="tituloSerie">Stranger Things</h1>
+            <img src="images/strager-portada-horizontal.png" id="imagenInfo">
+            <section>
+                <div class="sinopsis">
+                    <h2>Sinopsis</h2>
+                    <p>'Stranger Things' es una serie nostálgica de acción y misterio creada y dirigida por los hermanos
+                        Matt y Ross Duffer. La serie está ambientada en Indiana a principios de los años 80 y es un
+                        homenaje a las películas de la época. Protagonizada por Winona Ryder, David Harbour, Finn
+                        Wolfhard, Millie Bobby Brown, Gaten Matarazzo y Caleb McLaughlin, 'Stranger Things' se ha
+                        convertido ya en una serie de culto y en una de las series más aclamadas de Netflix.
+                        La historia comienza el 6 de noviembre de 1983 en la pequeña ciudad de Hawkings, cuando el joven
+                        Will Byers desaparece de manera misteriosa. Joyce, la preocupada madre de Will, inicia su
+                        búsqueda mientras que el jefe de policía Jim Hopper y sus tres amigos -Dustin, Mike y Lucas-
+                        inician una investigación paralela para intentar encontrar a Will. Los más jóvenes se encuentran
+                        en la búsqueda con 011, una chica misteriosa con poderes de telequinesis que asegura saber dónde
+                        está Will.</p>
+                </div>
+            </section>
+            <section>
+                <div class="personajes">
+                    <h2 class="tituloActores">Actores</h2>
+                    <ul class="row">
+                        <li>
+                            <img src="images/actores/milliwBobbyBown.png" alt="millie Bobby Bown"
+                                class="imagenesActores">
+                            <p class="nombreActores">millie Bobby Bown</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/winonaRyder.png" alt="winona Ryder" class="imagenesActores">
+                            <p class="nombreActores">Winona Ryder</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/noahSchnapp.png" alt="noah Schnapp" class="imagenesActores">
+                            <p class="nombreActores">Noah Schnapp</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="row" id="botonesFormularioComentario">
+                <button id="btnCapitulo"><a href="episodiosStrangerThings.html">Capítulos</a></button>
+                <button id="btnComentar">Comentar</button>
             </div>
-            <input id="enviar" type="submit" value="Enviar" />
-        </form>
-    </div>
+        </div>
+        <div class="formulario">
+            <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+            <form>
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
+                <input id="email" type="email" name="mail" placeholder="Email" required>
+                <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
+                <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
+                <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
+                    required></textarea>
+                <div id="bloqueCaptcha">
+                    <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                    <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+                </div>
+                <input id="enviar" type="submit" value="Enviar" />
+            </form>
+        </div>
+    </article>
     <footer class="row">
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
             <div class="footer-widget">

@@ -23,79 +23,86 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Accion</a>
                     <div class="dropdown-menu ">
-                        <a class="dropdown-item" id="categoriaNav" href="infoArrow.html">Arrow</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoChicagoPD.html">Chicago P.D</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosArrow.html">Arrow</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosChicagoPD.html">Chicago P.D</a>
                     </div>
                 </li>
                 <li>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Terror</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="infoStrangerThings.html">Stranger Things</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoSupernatural.html">Supernatural</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosStrangerThings.html">Stranger
+                            Things</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosSupernatural.html">Supernatural</a>
                     </div>
                 </li>
                 <li>
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Comedia</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" id="categoriaNav" href="infoBigBang.html">The BigBang Theory</a>
-                        <a class="dropdown-item" id="categoriaNav" href="infoModernFamily.html">Mordern Family</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosBigBang.html">The BigBang Theory</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosModernFamily.html">Mordern Family</a>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
-    <div id="cuerpoPagina">
-        <h1 id="tituloSerie">Chicago PD</h1>
-        <img src="images/chicago-portada-horizontal.png" class="altura" id="imagenInfo">
-        <div class="sinopsis">
-            <h2>Sinopsis</h2>
-            <p> La serie se centra en la patrulla de Policía y la Unidad de Inteligencia que persigue a los
-                responsables de los delitos en la ciudad, crimen organizado, el tráfico de estupefacientes y
-                homicidios mayores. En el departametne estará el detective Hank Voight (Jason Beghem,
-                'Phantom'), el inspector Antonio Dawson (Jon Seda, 'Una bala en la cabeza'), la oficial de
-                policía Nicole (Tania Raymonde, 'Perdidos'), un miembro del equipo de investigación CPD que
-                tiene un pasado insospechado, entre otros.</p>
-        </div>
-        <div class="personajes">
-            <h2 class="tituloActores">Actores</h2>
-            <ul class="row">
-                <li>
-                    <img src="images/actores/SophiaBush.png" alt="Sophia Bush" class="imagenesActores">
-                    <p class="nombreActores">Sophia Bush</p>
-                </li>
-                <li>
-                    <img src="images/actores/jasonBeghe.png" alt="jason Beghe" class="imagenesActores">
-                    <p class="nombreActores">Jason Beghe</p>
-                </li>
-                <li>
-                    <img src="images/actores/jesseLeeSofter.png" alt="jesse Lee Softer" class="imagenesActores">
-                    <p class="nombreActores">jesse Lee Softer</p>
-                </li>
-            </ul>
-        </div>
-        <div class="row" id="botonesFormularioComentario">
+    <article>
+        <div id="cuerpoPagina">
+            <h1 id="tituloSerie">Chicago PD</h1>
+            <img src="images/chicago-portada-horizontal.png" class="altura" id="imagenInfo">
+            <section>
+                <div class="sinopsis">
+                    <h2>Sinopsis</h2>
+                    <p> La serie se centra en la patrulla de Policía y la Unidad de Inteligencia que persigue a los
+                        responsables de los delitos en la ciudad, crimen organizado, el tráfico de estupefacientes y
+                        homicidios mayores. En el departametne estará el detective Hank Voight (Jason Beghem,
+                        'Phantom'), el inspector Antonio Dawson (Jon Seda, 'Una bala en la cabeza'), la oficial de
+                        policía Nicole (Tania Raymonde, 'Perdidos'), un miembro del equipo de investigación CPD que
+                        tiene un pasado insospechado, entre otros.</p>
+                </div>
+            </section>
+            <section>
+                <div class="personajes">
+                    <h2 class="tituloActores">Actores</h2>
+                    <ul class="row">
+                        <li>
+                            <img src="images/actores/SophiaBush.png" alt="Sophia Bush" class="imagenesActores">
+                            <p class="nombreActores">Sophia Bush</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/jasonBeghe.png" alt="jason Beghe" class="imagenesActores">
+                            <p class="nombreActores">Jason Beghe</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/jesseLeeSofter.png" alt="jesse Lee Softer" class="imagenesActores">
+                            <p class="nombreActores">jesse Lee Softer</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="row" id="botonesFormularioComentario">
                 <button id="btnCapitulo"><a href="episodiosChicagoPD.html">Capítulos</a></button>
                 <button id="btnComentar">Comentar</button>
-        </div>
-    </div>
-    <div class="formulario">
-        <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
-        <form>
-            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
-            <input id="email" type="email" name="mail" placeholder="Email" required>
-            <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
-            <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
-            <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
-                required></textarea>
-            <div id="bloqueCaptcha">
-                <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
-                <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
             </div>
-            <input id="enviar" type="submit" value="Enviar" />
-        </form>
-    </div>
+        </div>
+        <div class="formulario">
+            <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+            <form>
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
+                <input id="email" type="email" name="mail" placeholder="Email" required>
+                <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
+                <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
+                <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
+                    required></textarea>
+                <div id="bloqueCaptcha">
+                    <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                    <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+                </div>
+                <input id="enviar" type="submit" value="Enviar" />
+            </form>
+        </div>
+    </article>
     <footer class="row">
         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
             <div class="footer-widget">

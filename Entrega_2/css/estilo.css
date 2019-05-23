@@ -22,6 +22,7 @@ li a :hover{
     height: 20%;
     margin-right: 0;
 }
+
 /*imagenes Index*/
 .card{
     width: 300px;
@@ -30,15 +31,6 @@ li a :hover{
     margin-top: 10%;
     margin-left: 10%;
 }
-#imagenInfo{
-    margin-left: 20%;
-    width: 60%;
-}
-
-.imagenesActores{
-    margin-left: 20%;
-    width:50px;
-}
 
 /*Titulo*/
 .titulo{
@@ -46,6 +38,12 @@ li a :hover{
     margin-left: 9%;
     margin-top: 3%;
 }
+
+/*FOOTER*/ 
+footer{
+    width: 100%;
+}
+
 .listaFooter{
     margin-left:5%;
     display: inline;
@@ -66,6 +64,7 @@ li a :hover{
     margin-left: 20px;
     margin-right: 10px;
 }
+
 /*Titulo de info*/
 #tituloSerie{
         margin-top: 3%;
@@ -74,6 +73,18 @@ li a :hover{
         font-size: 500%;
         font-family: "member";
 }
+
+/*imagenes infoSerie.html*/
+#imagenInfo{
+    margin-left: 20%;
+    width: 60%;
+}
+
+.imagenesActores{
+    margin-left: 20%;
+    width:50px;
+}
+
 /*Sinopsis de la info*/
 .sinopsis{
     margin-left: 10px;
@@ -119,6 +130,7 @@ ul li{
 #btnCapitulo a{
     color: #fff;
 }
+
 /*Formulario de las info.html*/
 .formulario {
     margin: 2% auto;
@@ -135,6 +147,37 @@ ul li{
     margin: 2% auto;
 }
 
+.formulario input, .formulario textarea{
+    width: 80%;
+    padding: 1%;
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+/* --- Captcha --- */
+#captcha #numCaptcha{
+    display: inline-block;
+    background-color: #fff;
+    color: black;
+    border: solid 4px rgb(251, 255, 18);
+    width: 50%;
+    height: 20%;
+ }
+ #bloqueCaptcha{
+    background-color: #3F4053;
+    width: 60%;
+    border: solid 1px red;
+    margin: auto;
+    padding: 2%;
+ }
+ 
+ #captcha{
+    color: cyan;
+    font-size: 150%;
+    margin-left: 10%;
+ }
+ 
+
 /* clases ocultar y mostrar llamados desde javascript*/
 .ocultar {
     visibility: hidden;
@@ -150,11 +193,13 @@ ul li{
     margin-left: 45%;
     margin-bottom: 3%;
 }
+
+/*div bontones em info*/
 #botonesFormularioComentario{
     margin-left:3%;
 }
 
-/*--- Tabla de capitulos---*/
+ /*--- Tabla de capitulos---*/
 #imagenTabla{
     margin: 2% 25%;
     width: 50%;
@@ -186,7 +231,7 @@ th, tbody {
 }
 
 /*estilo botones en pagina con tabla*/
-.btn-tabla, .enviarCap{
+.btn-tabla, .btn-tabla a, .enviarCap{
     margin-left: 5%;
     margin-bottom: 2%;
     display: block;
@@ -202,39 +247,6 @@ th, tbody {
 form .enviarCap{
     margin: 5% auto;
     width: 50%;
-}
-
-/*  formulario comentar*/
-.formulario input, .formulario textarea{
-    width: 80%;
-    padding: 1%;
-    margin-top: 2%;
-    margin-left: 10%;
-}
-/* --- Captcha --- */
-#captcha #numCaptcha{
-   display: inline-block;
-   background-color: #fff;
-   color: black;
-   border: solid 4px rgb(251, 255, 18);
-   width: 50%;
-   height: 20%;
-}
-#bloqueCaptcha{
-   background-color: #3F4053;
-   width: 60%;
-   border: solid 1px red;
-   margin: auto;
-   padding: 2%;
-}
-
-#bloqueCaptcha input{
-   width: 60%;
-}
-#captcha{
-   color: cyan;
-   font-size: 150%;
-   margin-left: 10%;
 }
 
 /*FORMULARIO DE LA PÁGINA TABLA*/
@@ -263,10 +275,7 @@ input, .sinopsisCap{
     nav,.logo{
         float: left;
     }
-    /*logo*/
-    .logo{
-        margin-right: 0;
-    }
+    
     #categoriaNav{
         font-size: 25px;
         color: dodgerblue;
@@ -309,7 +318,7 @@ input, .sinopsisCap{
         font-size: 97px;
     }
 
-     /*ancho fomulario página tabla */
+     /*fomulario página tabla */
     #formTabla {
         width: 30%;
     }
