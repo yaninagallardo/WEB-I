@@ -3,19 +3,20 @@ document.addEventListener("DOMContentLoaded", inicializar);
 
 
 function inicializar() {
-
+    enviar();
     // BOTONES: 
     //BOTON AGREGAR 3 FILAS CARGADAS
     document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);
 
     //BOTON ELIMINAR FILAS DE LA LISTA Y DE JSON
-    document.querySelector("#btn-eliminar").addEventListener("click", vaciarFilas);
+    document.querySelector("#btn-eliminar").addEventListener("click", enviar);
 
     //inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
     document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm);
 
     // trae del DOM cuerpo de la tabla
     let cuerpoTabla = document.querySelector("#cuerpoTabla");
+    let url = "web-unicen.herokuapp.com/api/groups/06/series";      //URL
 
     /**
      * Json objeto de filas en la tabla
@@ -29,6 +30,31 @@ function inicializar() {
             "sinopsis": "Oliver acude a Laurel cuando descubre que lleva un proceso contra Martin Somers"
         }]
     };
+     
+
+    async function enviar(){
+        let data =
+            { "thing": 
+                {
+                    "numCapitulo": 1,
+                    "numTemporada": 2,
+                    "titulo": "Piloto",
+                    "fechaEmision": "2012/11/02",
+                    "sinopsis": "Oliver acude a Laurel cuando descubre que lleva un proceso contra Martin Somers"
+            }
+    };
+
+        let resp = await fetch("http://web-unicen.herokuapp.com/api/groups/06/series", {
+            "method": "POST",
+            "headers":
+            {
+                "content-Type": "application/json"
+            },
+            "body": JSON.stringify(data)
+        });
+
+        let json 
+    }
 
     //inputs de HTML correpondientes al formulario
     let capitulo = document.querySelector(".num-cap");
@@ -81,8 +107,8 @@ function inicializar() {
      */
     function imprimirTabla() {
         //   body de la tabla.innerHTML = '';
-        
         //   for i = 0 hasta series.length
+
         cuerpoTabla.innerHTML = "";  //borra el contenido en tbody de html 
 
         //volver a cagar la tabla recorriendo json
@@ -112,7 +138,6 @@ function inicializar() {
             celda5.appendChild(texto5);
 
         }
-
     }    
   
 
