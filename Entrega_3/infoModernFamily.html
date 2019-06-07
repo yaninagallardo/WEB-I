@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>WikiSeries</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo1.png" class="logo">
+        </a>
+        <nav class="navbar-default">
+            <ul class="nav nav-pills">
+                <li>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Accion</a>
+                    <div class="dropdown-menu ">
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosArrow.html">Arrow</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosChicagoPD.html">Chicago P.D</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Terror</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosStrangerThings.html">Stranger
+                            Things</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosSupernatural.html">Supernatural</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Comedia</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosBigBang.html">The BigBang Theory</a>
+                        <a class="dropdown-item" id="categoriaNav" href="episodiosModernFamily.html">Mordern Family</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <div id="cuerpoPagina">
+            <h1 id="tituloSerie">Modern Family</h1>
+            <img src="images/modernFamily-portada-horizontal.png" id="imagenInfo">
+            <section>
+                <div class="sinopsis">
+                    <h2>Sinopsis</h2>
+                    <p>La serie está concebida como falso documental, hecho que notamos tanto en los
+                        movimientos de cámara como en las numerosas ocasiones en que los protagonistas se dirigen
+                        directamente a ella.La primera de las familias está formada por Jay Pritchett ,
+                        que con más de 60 años está casado con una despampanante mujer latina llamada Gloria Pritchett
+                        -posteriormente Delgado- y que convive además con el hijo de esta -fruto de su anterior
+                        matrimonio-
+                        llamado Manny. Por otro
+                        lado, tenemos a una pareja gay formada por Cam y Mitchell, que acaban de adoptar a una pequeña
+                        niña en
+                        Vietnam a la
+                        que han llamado Lily.La última de las tres familias está formada por Phil Dunphy, Claire Dunphy
+                        y sus
+                        tres hijos: Haley, Alex y Luke. El padre intenta ser siempre el 'papá guay' en contraposición a
+                        la
+                        madre, que
+                        es sobreprotectora y controladora donde las haya.</p>
+                </div>
+            </section>
+            <section>
+                <div class="personajes">
+                    <h2 class="tituloActores">Actores</h2>
+                    <ul class="row">
+                        <li>
+                            <img src="images/actores/sofiaVergara.png" alt="sofia Vergara" class="imagenesActores">
+                            <p class="nombreActores">Sofia Vergara</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/julieBowen.png" alt="Julie Bowen" class="imagenesActores">
+                            <p class="nombreActores">Julie Bowen</p>
+                        </li>
+                        <li>
+                            <img src="images/actores/edOneill.png" alt="ed Oneill" class="imagenesActores">
+                            <p class="nombreActores">Ed Oneill</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="row" id="botonesFormularioComentario">
+                <button id="btnCapitulo"><a href="episodiosModernFamily.html">Capítulos</a></button>
+                <button id="btnComentar">Comentar</button>
+            </div>
+        </div>
+
+        <div class="formulario">
+            <button id="btnSalir"><i class="fas fa-times-circle"></i></button>
+            <form>
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
+                <input id="email" type="email" name="mail" placeholder="Email" required>
+                <input id="temporada" type="number" name="temporada" placeholder="Nro. Temporada">
+                <input id="capitulo" type="number" name="capitulo" placeholder="Nro. Capitulo">
+                <textarea id="comentario" name="comentario" placeholder="Dejanos tu comentario aqui" rows="8" cols="40"
+                    required></textarea>
+                <div id="bloqueCaptcha">
+                    <label id="captcha">Captcha: <span id="numCaptcha"></span></label>
+                    <input id="introducirCaptcha" type="number" name="captcha" placeholder="Ingrese captcha" required />
+                </div>
+                <input id="enviar" type="submit" value="Enviar" />
+            </form>
+        </div>
+    </article>
+    <footer class="row">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+            <div class="footer-widget">
+                <div class="footer-title" id="sociaFooter">Social</div>
+                <ul class="list-unstyled">
+                    <li class="listaFooter"><a href="https://twitter.com/?lang=es">Twitter</a></li>
+                    <li class="listaFooter"><a href="https://www.google.com/intl/es_ALL/+/policy/"> Google +</a></li>
+                    <li class="listaFooter"><a href="https://es-la.facebook.com/">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="js/formulario.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
