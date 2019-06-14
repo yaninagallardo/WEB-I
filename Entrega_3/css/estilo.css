@@ -111,7 +111,16 @@ ul li{
     list-style:none;
 }
 /* --- BOTÓN CAPÍTULOS, COMENTAR, ENVIAR (formulario infoSerie.html) ---*/
- #btnCapitulo, #btnComentar, #enviar{
+.buttoBuscar{
+    width: 100%;
+    margin-right: 5%;
+    padding: 5%;
+} 
+.tamanioButton{
+    width: 100px;
+    height: 43px;
+}
+ #btnCapitulo, #btnComentar, #enviar,button.tamanioButton{
      margin-bottom: 2%;
     font-family: cursive;
     font-size: 20px;
@@ -327,5 +336,13 @@ input, .sinopsisCap{
      /*fomulario página tabla */
     #formTabla {
         width: 30%;
+    }
+    /*buscador*/
+    button.tamanioButton{
+        margin-top: 5px;    
+    }
+    .buttoBuscar{
+        width: 60%;
+        margin-left: 20%;
     }
 }
