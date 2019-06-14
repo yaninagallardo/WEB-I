@@ -3,48 +3,26 @@ document.addEventListener("DOMContentLoaded", inicializar);
 
 
 function inicializar() {
-    enviar();
+    let url = "http://web-unicen.herokuapp.com/api/groups/06/series";      //URL
+    borrarObjetoDeServicio();
+
     // BOTONES: 
     //BOTON AGREGAR 3 FILAS CARGADAS
     document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);
 
     //BOTON ELIMINAR FILAS DE LA LISTA Y DE JSON
-    document.querySelector("#btn-eliminar").addEventListener("click", enviar);
+    document.querySelector("#btn-eliminar").addEventListener("click", vaciarFilas);
 
     //inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
     document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm);
 
     // trae del DOM cuerpo de la tabla
     let cuerpoTabla = document.querySelector("#cuerpoTabla");
-    let url = "web-unicen.herokuapp.com/api/groups/06/series";      //URL
 
-    /**
-     * Json objeto de filas en la tabla
-     */
-    let filaNueva = {
-        "serie": [{
-            "numCapitulo": 1,
-            "numTemporada": 2,
-            "titulo": "Piloto",
-            "fechaEmision": "2012/11/02",
-            "sinopsis": "Oliver acude a Laurel cuando descubre que lleva un proceso contra Martin Somers"
-        }]
-    };
-     
 
-    async function enviar(){
-        let data =
-            { "thing": 
-                {
-                    "numCapitulo": 1,
-                    "numTemporada": 2,
-                    "titulo": "Piloto",
-                    "fechaEmision": "2012/11/02",
-                    "sinopsis": "Oliver acude a Laurel cuando descubre que lleva un proceso contra Martin Somers"
-            }
-    };
+    async function guardarEnServicio(data) {
 
-        let resp = await fetch("http://web-unicen.herokuapp.com/api/groups/06/series", {
+        let resp = await fetch(url, {
             "method": "POST",
             "headers":
             {
@@ -52,14 +30,12 @@ function inicializar() {
             },
             "body": JSON.stringify(data)
         });
-
-        let json 
     }
 
     //inputs de HTML correpondientes al formulario
     let capitulo = document.querySelector(".num-cap");
     let temporada = document.querySelector(".num-tem");
-    let tit = document.querySelector(".tituloSerie");
+    let tituloSerie = document.querySelector(".tituloSerie");
     let emision = document.querySelector(".fecha-emision");
     let sinop = document.querySelector(".sinopsisCap");
 
@@ -78,43 +54,66 @@ function inicializar() {
      * @param event 
      */
     function agregarFilaDeForm(event) {
-        
-            event.preventDefault();
-        
-
-        let nuevo = {
-            "numCapitulo": capitulo.value,
-            "numTemporada": temporada.value,
-            "titulo": tit.value,
-            "fechaEmision": emision.value,
-            "sinopsis": sinop.value,
-        }
-        filaNueva.serie.push(nuevo);
-        //series.push(nuevo);
+        event.preventDefault();
+        let data =
+        {
+            "thing":
+            {
+                "numCapitulo": capitulo.value,
+                "numTemporada": temporada.value,
+                "titulo": tituloSerie.value,
+                "fechaEmision": emision.value,
+                "sinopsis": sinop.value,
+            }
+        };
+        guardarEnServicio(data);
         imprimirTabla();
-
     }
 
-    /**
-     * función que inserta una fila ya cargada en el arrgelo serie 
-     * correspondiente a Json (filaNueva)
-     */
+    async function getJsonServicio(){
+        let resp = await fetch(url);
 
+        let json = await resp.json();
 
-    /**
+        return json;
+    }
+
+    async function borrarObjetoDeServicio() {
+        let json = await getJsonServicio();
+
+        for (let data of json.series) {
+            await fetch("http://web-unicen.herokuapp.com/api/groups/06/series/5cfac57198987d00048e3331",
+                {
+                    "method": "delete",
+                    "mode": "cors",
+                    "headers":
+                    {
+                        "Content-Type": "application/json"
+                    }
+                });
+        }
+    }
+
+    /**        Corrección en entrega 2:
+     * 
      * LA RESOLUCION SERIA RECARGAR LA TABLA CADA VES QUE SE AGREGA UNA NUEVA
      * FILA. AL IGUAL QUE PARA DESTACAR O BUSCAR
      */
-    function imprimirTabla() {
-        //   body de la tabla.innerHTML = '';
-        //   for i = 0 hasta series.length
+    async function imprimirTabla() {
+
+        let json = await getJsonServicio();
 
         cuerpoTabla.innerHTML = "";  //borra el contenido en tbody de html 
 
         //volver a cagar la tabla recorriendo json
-        for (let indice = 0; indice < filaNueva.serie.length; indice++) {
+        for (let data of json.series) {
+
             //inserta una nueva fila en tbody
             let fila = cuerpoTabla.insertRow();
+            
+            //boton borrar fila
+            let btnBorrar = botonBorrar();
+            let btnEditar = botonEditar();
 
             //inserta 5 celdas nuevas correspondientes a la cantidad de columnas en la tabla
             let celda1 = fila.insertCell();
@@ -122,13 +121,15 @@ function inicializar() {
             let celda3 = fila.insertCell();
             let celda4 = fila.insertCell();
             let celda5 = fila.insertCell();
+            let celda6 = fila.insertCell();
+            let celda7 = fila.insertCell();
 
             //pasaje de contenido en json a texto (http)
-            let texto1 = document.createTextNode(filaNueva.serie[indice].numCapitulo);
-            let texto2 = document.createTextNode(filaNueva.serie[indice].numTemporada);
-            let texto3 = document.createTextNode(filaNueva.serie[indice].titulo);
-            let texto4 = document.createTextNode(filaNueva.serie[indice].fechaEmision);
-            let texto5 = document.createTextNode(filaNueva.serie[indice].sinopsis);
+            let texto1 = document.createTextNode(data.thing.numCapitulo);
+            let texto2 = document.createTextNode(data.thing.numTemporada);
+            let texto3 = document.createTextNode(data.thing.titulo);
+            let texto4 = document.createTextNode(data.thing.fechaEmision);
+            let texto5 = document.createTextNode(data.thing.sinopsis);
 
             //agrega texto a la celda hija correspondiente
             celda1.appendChild(texto1);
@@ -136,10 +137,39 @@ function inicializar() {
             celda3.appendChild(texto3);
             celda4.appendChild(texto4);
             celda5.appendChild(texto5);
+            celda6.appendChild(btnBorrar);
+            celda7.appendChild(btnEditar);
 
         }
-    }    
-  
+    }
+
+    /**
+     * crea, da estilo (desde css) y función al boton borrar,
+     *  encargado de eliminar la fila y su contenido en el servicio
+     */
+    function botonBorrar(){
+        let btnBorrar = document.createElement("button");
+
+        btnBorrar.innerHTML = "BORRAR";
+        btnBorrar.classList.add("btn");
+
+        //btnBorrar.addEventListener("click", borrarFila);
+        return btnBorrar;
+    }
+
+    /**
+     * crea, da estilo (desde css) y función al boton editar,
+     *  encargado de editar la fila y su contenido en el servicio
+     */
+    function botonEditar(){
+        let btn = document.createElement("button");
+
+        btn.innerHTML = "EDITAR";
+        btn.classList.add("btn");
+
+        //btn.addEventListener("click", editarFila);
+        return btn;
+    }
 
     /**
      * Esta función vacia tanto el arreglo con la información existente
