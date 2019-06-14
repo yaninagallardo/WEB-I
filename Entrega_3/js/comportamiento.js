@@ -81,11 +81,10 @@ function inicializar() {
     async function borrarObjetoDeServicio(capituloABrorrar) {
         let json = await getJsonServicio();
 
-
-        for (let data of json.series) {
-            if (data.thing.numCapitulo == capituloABrorrar) {
-                console.log(data._id);
-                await fetch(url +"/" + data._id,
+        for (let serie of json.series) {
+            if (serie.thing.numCapitulo == capituloABrorrar) {
+                console.log(serie._id);
+                await fetch(url + "/" + serie._id,
                     {
                         "method": "DELETE",
                         "mode": "cors",
@@ -96,7 +95,6 @@ function inicializar() {
                     });
             }
         }
-
     }
 
     /**        Corrección en entrega 2:
@@ -136,7 +134,8 @@ function inicializar() {
             let texto4 = document.createTextNode(data.thing.fechaEmision);
             let texto5 = document.createTextNode(data.thing.sinopsis);
 
-            celda1.classList.add(".titulo");
+            //agrega clase al td numCapitulo
+            celda1.classList.add(".numeroCapitulo");
 
             //agrega texto a la celda hija correspondiente
             celda1.appendChild(texto1);
@@ -158,20 +157,16 @@ function inicializar() {
         let btnBorrar = document.createElement("button");
 
         btnBorrar.innerHTML = "BORRAR";
+        btnBorrar.classList.add("btn");
 
+        btnBorrar.addEventListener("click", function () {                          //pasar a funcion aparte
+            let tdsFila = btnBorrar.closest("tr").querySelectorAll("td");
 
-        btnBorrar.addEventListener("click", function () {
-            let c = btnBorrar.closest("tr").querySelectorAll("td");
-
-
-            for (let cs of c) {
-                if (cs.classList.value == ".titulo") {
-                    console.log("ca    " + cs.textContent);
-                    borrarObjetoDeServicio(cs.textContent);
+            for (let elementTd of tdsFila) {
+                if (elementTd.classList.value == ".numeroCapitulo") {
+                    borrarObjetoDeServicio(elementTd.textContent);
                 }
             }
-            
-
         });
         imprimirTabla();
         return btnBorrar;
