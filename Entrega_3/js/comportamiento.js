@@ -70,7 +70,7 @@ function inicializar() {
         imprimirTabla();
     }
 
-    async function getJsonServicio(){
+    async function getJsonServicio() {
         let resp = await fetch(url);
 
         let json = await resp.json();
@@ -78,20 +78,25 @@ function inicializar() {
         return json;
     }
 
-    async function borrarObjetoDeServicio() {
+    async function borrarObjetoDeServicio(capituloABrorrar) {
         let json = await getJsonServicio();
 
+
         for (let data of json.series) {
-            await fetch("http://web-unicen.herokuapp.com/api/groups/06/series/5cfac57198987d00048e3331",
-                {
-                    "method": "delete",
-                    "mode": "cors",
-                    "headers":
+            if (data.thing.numCapitulo == capituloABrorrar) {
+                console.log(data._id);
+                await fetch(url +"/" + data._id,
                     {
-                        "Content-Type": "application/json"
-                    }
-                });
+                        "method": "DELETE",
+                        "mode": "cors",
+                        "headers":
+                        {
+                            "Content-Type": "application/json"
+                        }
+                    });
+            }
         }
+
     }
 
     /**        Corrección en entrega 2:
@@ -110,7 +115,7 @@ function inicializar() {
 
             //inserta una nueva fila en tbody
             let fila = cuerpoTabla.insertRow();
-            
+
             //boton borrar fila
             let btnBorrar = botonBorrar();
             let btnEditar = botonEditar();
@@ -131,6 +136,8 @@ function inicializar() {
             let texto4 = document.createTextNode(data.thing.fechaEmision);
             let texto5 = document.createTextNode(data.thing.sinopsis);
 
+            celda1.classList.add(".titulo");
+
             //agrega texto a la celda hija correspondiente
             celda1.appendChild(texto1);
             celda2.appendChild(texto2);
@@ -147,13 +154,26 @@ function inicializar() {
      * crea, da estilo (desde css) y función al boton borrar,
      *  encargado de eliminar la fila y su contenido en el servicio
      */
-    function botonBorrar(){
+    function botonBorrar() {
         let btnBorrar = document.createElement("button");
 
         btnBorrar.innerHTML = "BORRAR";
-        btnBorrar.classList.add("btn");
 
-        //btnBorrar.addEventListener("click", borrarFila);
+
+        btnBorrar.addEventListener("click", function () {
+            let c = btnBorrar.closest("tr").querySelectorAll("td");
+
+
+            for (let cs of c) {
+                if (cs.classList.value == ".titulo") {
+                    console.log("ca    " + cs.textContent);
+                    borrarObjetoDeServicio(cs.textContent);
+                }
+            }
+            
+
+        });
+        imprimirTabla();
         return btnBorrar;
     }
 
@@ -161,7 +181,7 @@ function inicializar() {
      * crea, da estilo (desde css) y función al boton editar,
      *  encargado de editar la fila y su contenido en el servicio
      */
-    function botonEditar(){
+    function botonEditar() {
         let btn = document.createElement("button");
 
         btn.innerHTML = "EDITAR";
