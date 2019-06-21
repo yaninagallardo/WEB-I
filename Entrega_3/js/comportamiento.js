@@ -10,9 +10,6 @@ function inicializar() {
     //BOTON AGREGAR 3 FILAS CARGADAS
     document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas);
 
-    //BOTON ELIMINAR FILAS DE LA LISTA Y DE JSON
-    document.querySelector("#btn-eliminar").addEventListener("click", vaciarFilas);
-
     //inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
     document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm);
 
@@ -30,6 +27,8 @@ function inicializar() {
             },
             "body": JSON.stringify(data)
         });
+
+        return true;
     }
 
     //inputs de HTML correpondientes al formulario
@@ -66,8 +65,12 @@ function inicializar() {
                 "sinopsis": sinop.value,
             }
         };
-        guardarEnServicio(data);
-        imprimirTabla();
+       
+        let guardado = guardarEnServicio(data);
+
+        if (guardado){
+            imprimirTabla();
+        }
     }
 
     async function getJsonServicio() {
@@ -78,11 +81,11 @@ function inicializar() {
         return json;
     }
 
-    async function borrarObjetoDeServicio(capituloABrorrar) {
+    async function borrarObjetoDeServicio(idElemento) {
         let json = await getJsonServicio();
 
         for (let serie of json.series) {
-            if (serie.thing.numCapitulo == capituloABrorrar) {
+            if (serie._id == idElemento) {
                 console.log(serie._id);
                 await fetch(url + "/" + serie._id,
                     {
@@ -115,7 +118,7 @@ function inicializar() {
             let fila = cuerpoTabla.insertRow();
 
             //boton borrar fila
-            let btnBorrar = botonBorrar();
+            let btnBorrar = botonBorrar(data._id);
             let btnEditar = botonEditar();
 
             //inserta 5 celdas nuevas correspondientes a la cantidad de columnas en la tabla
@@ -145,7 +148,6 @@ function inicializar() {
             celda5.appendChild(texto5);
             celda6.appendChild(btnBorrar);
             celda7.appendChild(btnEditar);
-
         }
     }
 
@@ -153,20 +155,17 @@ function inicializar() {
      * crea, da estilo (desde css) y función al boton borrar,
      *  encargado de eliminar la fila y su contenido en el servicio
      */
-    function botonBorrar() {
+    function botonBorrar(idElemento) {
         let btnBorrar = document.createElement("button");
 
         btnBorrar.innerHTML = "BORRAR";
-        btnBorrar.classList.add("btn");
+        btnBorrar.classList.add("btnBorrar");
 
+        btnBorrar.setAttribute("id", idElemento);
+        //console.log(btnBorrar);
+       
         btnBorrar.addEventListener("click", function () {                          //pasar a funcion aparte
-            let tdsFila = btnBorrar.closest("tr").querySelectorAll("td");
-
-            for (let elementTd of tdsFila) {
-                if (elementTd.classList.value == ".numeroCapitulo") {
-                    borrarObjetoDeServicio(elementTd.textContent);
-                }
-            }
+            borrarObjetoDeServicio(btnBorrar.getAttribute("id"));
         });
         imprimirTabla();
         return btnBorrar;
@@ -180,19 +179,20 @@ function inicializar() {
         let btn = document.createElement("button");
 
         btn.innerHTML = "EDITAR";
-        btn.classList.add("btn");
+        btn.classList.add("btnEditar");
+        //agregar id comun y por parametro traer id del data
 
-        //btn.addEventListener("click", editarFila);
+        
+
+       /* btn.addEventListener("click", function (){
+            let tdsFila = btn.closest("tr").querySelectorAll("td");
+
+            for (let elementTd of tdsFila){
+                elementTd.contentEditable ="true";
+            }
+        });*/
+
         return btn;
-    }
-
-    /**
-     * Esta función vacia tanto el arreglo con la información existente
-     * como las filas en la tabla. Dejando a la vista solo el thead
-     */
-    function vaciarFilas() {
-        filaNueva.serie = [];
-        cuerpoTabla.innerHTML = "";
     }
 
     imprimirTabla();
