@@ -198,7 +198,7 @@ ul li{
     display: block;
 }
 /*Boton comentarios*/
-#cajaBtnComentar{
+.cajaBtnComentar{
     margin-left: 45%;
     margin-bottom: 3%;
 }
@@ -209,7 +209,7 @@ ul li{
 }
 
  /*--- Tabla de capitulos---*/
-#imagenTabla{
+.imagenTabla{
     margin: 2% 25%;
     width: 50%;
 }
