@@ -65,39 +65,35 @@ function inicializar() {
                 "sinopsis": sinop.value,
             }
         };
-       
+
         let guardado = guardarEnServicio(data);
 
-        if (guardado){
+        if (guardado) {
             imprimirTabla();
         }
     }
 
-    async function getJsonServicio() {
-        let resp = await fetch(url);
-
-        let json = await resp.json();
+    async function getJsonServicio(id) {
+        let json = await fetch(baseURL + grupo + "/" + id, {
+            method: "GET",
+            mode: "cors"
+        })
 
         return json;
     }
 
     async function borrarObjetoDeServicio(idElemento) {
-        let json = await getJsonServicio();
+        await fetch(url + "/" + idElemento,
+            {
+                "method": "DELETE",
+                "mode": "cors",
+                "headers":
+                {
+                    "Content-Type": "application/json"
+                }
+            });
 
-        for (let serie of json.series) {
-            if (serie._id == idElemento) {
-                console.log(serie._id);
-                await fetch(url + "/" + serie._id,
-                    {
-                        "method": "DELETE",
-                        "mode": "cors",
-                        "headers":
-                        {
-                            "Content-Type": "application/json"
-                        }
-                    });
-            }
-        }
+
     }
 
     /**        Corrección en entrega 2:
@@ -107,7 +103,8 @@ function inicializar() {
      */
     async function imprimirTabla() {
 
-        let json = await getJsonServicio();
+        let resp = await fetch(url);
+        let json = await resp.json();
 
         cuerpoTabla.innerHTML = "";  //borra el contenido en tbody de html 
 
@@ -163,7 +160,7 @@ function inicializar() {
 
         btnBorrar.setAttribute("id", idElemento);
         //console.log(btnBorrar);
-       
+
         btnBorrar.addEventListener("click", function () {                          //pasar a funcion aparte
             borrarObjetoDeServicio(btnBorrar.getAttribute("id"));
         });
@@ -182,15 +179,15 @@ function inicializar() {
         btn.classList.add("btnEditar");
         //agregar id comun y por parametro traer id del data
 
-        
 
-       /* btn.addEventListener("click", function (){
-            let tdsFila = btn.closest("tr").querySelectorAll("td");
 
-            for (let elementTd of tdsFila){
-                elementTd.contentEditable ="true";
-            }
-        });*/
+        /* btn.addEventListener("click", function (){
+             let tdsFila = btn.closest("tr").querySelectorAll("td");
+ 
+             for (let elementTd of tdsFila){
+                 elementTd.contentEditable ="true";
+             }
+         });*/
 
         return btn;
     }
