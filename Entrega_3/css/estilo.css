@@ -27,9 +27,9 @@ li a :hover{
 .card{
     width: 300px;
 }
-#margenImgIndex{
+.margenImgIndex{
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 8%;
 }
 
 /*Titulo*/
@@ -48,16 +48,16 @@ footer{
     margin-left:5%;
     display: inline;
 }
-#sociaFooter{
+.sociaFooter{
     color:  rgb(0, 119, 255);
     margin-left: 5%;
 }
-.listaFooter,#sociaFooter{
+.listaFooter,.sociaFooter{
     font-size: 20px;
 }
 
 /*cuerpo de la pagina de info*/
-#cuerpoPagina{
+.cuerpoPagina{
     background-color: rgba(17, 18, 37, 0.795);
     width:370px;
     height:80%;
@@ -66,7 +66,7 @@ footer{
 }
 
 /*Titulo de info*/
-#tituloSerie{
+.tituloSerie{
         margin-top: 3%;
         text-align: center;
         color:rgb(201, 255, 6);
@@ -75,7 +75,7 @@ footer{
 }
 
 /*imagenes infoSerie.html*/
-#imagenInfo{
+.imagenInfo{
     margin-left: 20%;
     width: 60%;
 }
@@ -120,7 +120,7 @@ ul li{
     width: 100px;
     height: 43px;
 }
- #btnCapitulo, #btnComentar, #enviar,button.tamanioButton{
+ .btnCapitulo,.btnComentar,.enviar,button.tamanioButton{
      margin-bottom: 2%;
     font-family: cursive;
     font-size: 20px;
@@ -131,12 +131,12 @@ ul li{
     display: block;
 }
 
-#btnCapitulo {
+.btnCapitulo {
     margin-right: 75%;
     color: #fff;
 }
 
-#btnCapitulo a{
+.btnCapitulo a{
     color: #fff;
 }
 
@@ -151,7 +151,7 @@ ul li{
     border: solid 1px grey;
 }
 
-#enviar{
+.enviar{
     width: 30%;
     margin: 2% auto;
 }
@@ -164,7 +164,7 @@ ul li{
 }
 
 /* --- Captcha --- */
-#captcha #numCaptcha{
+.captcha .numCaptcha{
     display: inline-block;
     background-color: #fff;
     color: black;
@@ -172,7 +172,7 @@ ul li{
     width: 50%;
     height: 20%;
  }
- #bloqueCaptcha{
+ .bloqueCaptcha{
     background-color: #3F4053;
     width: 60%;
     border: solid 1px red;
@@ -180,7 +180,7 @@ ul li{
     padding: 2%;
  }
  
- #captcha{
+ .captcha{
     color: cyan;
     font-size: 150%;
     margin-left: 10%;
@@ -204,7 +204,7 @@ ul li{
 }
 
 /*div bontones em info*/
-#botonesFormularioComentario{
+.botonesFormularioComentario{
     margin-left:3%;
 }
 
@@ -291,12 +291,12 @@ input, .sinopsisCap{
         float: left;
     }
     
-    #categoriaNav{
+    .categoriaNav{
         font-size: 25px;
         color: dodgerblue;
     }
     /*Imagenes index*/
-    #margenImgIndex{
+    .margenImgIndex{
         margin-left: 5%;
         margin-top: 5%;
     }
@@ -314,7 +314,7 @@ input, .sinopsisCap{
         width: 30%;
     }
     /*Html De info*/
-    #cuerpoPagina{
+    .cuerpoPagina{
         width:80%;
         margin-left: 10%;
         clear: both;
@@ -329,12 +329,12 @@ input, .sinopsisCap{
     .imagenesActores{
         width: 80px;
     }
-    #tituloSerie{
+    .tituloSerie{
         font-size: 97px;
     }
 
      /*fomulario página tabla */
-    #formTabla {
+    .formTabla {
         width: 30%;
     }
     /*buscador*/
