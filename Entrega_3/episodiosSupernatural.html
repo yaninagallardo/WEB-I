@@ -51,7 +51,7 @@
         <div class="buttoBuscar input-group mb-3">
             <input type="text" class="form-control" placeholder="ingrese titulo del capitulo" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-              <button class="tamanioButton btn" >Buscar</button>
+              <button class="tamanioButton btn" id="js-btnBuscar">Buscar</button>
             </div>
         </div>
         <table class="tabla">
@@ -62,6 +62,8 @@
                     <th>Título</th>
                     <th>Fecha de emisión</th>
                     <th>Sinopsis</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -69,10 +71,9 @@
             </tbody>
         </table>
         <button class="btn-tabla" id="btn-agregar3">Agregar 3 capítulos</button>
-        <button class="btn-tabla" id="btn-eliminar">Eliminar capítulos</button>
         <button class="btn-tabla"><a href="infoSupernatural.html">Información</a></button>
 
-        <form id="formTabla">
+        <form class="formTabla">
             <input class="num-cap" type="number" name="num-cap" placeholder="N° Capitulo" value="" required />
             <input class="num-tem" type="number" name="num-tem" placeholder="N° Temporada" value="" required />
             <input class="tituloSerie" type="text" name="titulo" placeholder="Título" required />
