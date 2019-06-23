@@ -275,12 +275,15 @@ input, .sinopsisCap{
 }
 
 
-.btnBorrar, .btnEditar{
+.btnBorrar, .btnEditar, .btn{
     color: red;
     background-color: transparent;
     font-size: 12px;
-    padding: 0%;
+    border-color: #fff;
+    font-size: 100%;
+
 }
+
 
 @media only screen and (min-width:600px){
     /*Barra nav*/
