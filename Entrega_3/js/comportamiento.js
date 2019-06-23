@@ -1,6 +1,8 @@
 //DOM
 document.addEventListener("DOMContentLoaded", inicio);
+
 function inicio() {
+    "use strict"
     imprimirTabla();
 }
 
@@ -15,7 +17,6 @@ document.querySelector("#btn-agregar3").addEventListener("click", agregar3filas)
 document.querySelector("#js-btnBuscar").addEventListener("click", buscarElementos);
 
 //input
-
 let inputBuscar = document.querySelector(".form-control");
 
 //inserta nueva serie a la tabla desde el formulario cargado (BOTON ENVIAR)
@@ -24,7 +25,7 @@ document.querySelector(".enviarCap").addEventListener("click", agregarFilaDeForm
 // trae del DOM cuerpo de la tabla
 let cuerpoTabla = document.querySelector("#cuerpoTabla");
 
-
+//METODOS ABMG
 async function guardarEnServicio(data) {
 
     await fetch(url, {
@@ -35,9 +36,52 @@ async function guardarEnServicio(data) {
         },
         "body": JSON.stringify(data)
     });
-
-    return true;
 }
+
+async function getJsonServicio(id) {
+    let r = await fetch(url + "/" + id,
+        {
+            "method": "GET",
+            "mode": "cors",
+            "headers":
+            {
+                "Content-Type": "application/json"
+            }
+        }
+
+    );
+
+    let json = await r.json();
+    return json.information;
+}
+
+async function borrarObjetoDeServicio(idElemento) {
+    await fetch(url + "/" + idElemento,
+        {
+            "method": "DELETE",
+            "mode": "cors",
+            "headers":
+            {
+                "Content-Type": "application/json"
+            }
+        }
+    );
+}
+
+async function editarObjetoDeServicio(idElemento, data) {
+    await fetch(url + "/" + idElemento,
+        {
+            "method": "PUT",
+            "mode": "cors",
+            "headers":
+            {
+                "Content-Type": "application/json"
+            },
+            "body": JSON.stringify(data)
+        }
+    );
+}
+
 
 //inputs de HTML correpondientes al formulario
 let capitulo = document.querySelector(".num-cap");
@@ -75,41 +119,9 @@ function agregarFilaDeForm(event) {
         }
     };
 
-    guardarEnServicio(data);
+    guardarEnServicio(data)
     imprimirTabla();
 
-}
-
-async function getJsonServicio() {
-    let r = await fetch(url);
-    return await r.json();
-}
-
-async function borrarObjetoDeServicio(idElemento) {
-    await fetch(url + "/" + idElemento,
-        {
-            "method": "DELETE",
-            "mode": "cors",
-            "headers":
-            {
-                "Content-Type": "application/json"
-            }
-        }
-    );
-}
-
-
-async function editarObjetoDeServicio(idElemento) {
-    await fetch(url + "/" + idElemento,
-        {
-            "method": "PUT",
-            "mode": "cors",
-            "headers":
-            {
-                "Content-Type": "application/json"
-            }
-        }
-    );
 }
 
 /**        Corrección en entrega 2:
@@ -118,22 +130,47 @@ async function editarObjetoDeServicio(idElemento) {
  * FILA. AL IGUAL QUE PARA DESTACAR O BUSCAR
  */
 function imprimirTabla() {
+    
     fetch(url)
         .then(function (response) {
             return response.json();
         })
         .then(function (json) {
-            console.log(json);
-            cuerpoTabla.innerHTML = "";  //borra el contenido en tbody de html 
-            //cargar la tabla recorriendo json
+            cuerpoTabla.innerHTML = " ";  //borra el contenido en tbody de html  
+            //recorre json y carga la tabla
             for (let data of json.series) {
                 cargarTabla(data);
+
             }
         });
 }
 
-function cargarTabla(data) {
+/**
+ * busca coincidencias en titulo con el input en buscar 
+ * y pasa al metodo cargar tabla la informacion a mostrar
+ * 
+ */
+function buscarElementos() {
+   
+    fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            cuerpoTabla.innerHTML = "";
+            for (let element of json.series) {
+                if (element.thing.titulo == inputBuscar.value) {
+                    cargarTabla(element);
+                }
+            }
+        });
+}
 
+/**
+ * cargar tabla con la informacion pasada por parametro
+ * @param {*} data 
+ */
+function cargarTabla(data) {
     //inserta una nueva fila en tbody
     let fila = cuerpoTabla.insertRow();
 
@@ -157,7 +194,6 @@ function cargarTabla(data) {
     let texto4 = document.createTextNode(data.thing.fechaEmision);
     let texto5 = document.createTextNode(data.thing.sinopsis);
 
-
     //agrega texto a la celda hija correspondiente
     celda1.appendChild(texto1);
     celda2.appendChild(texto2);
@@ -167,7 +203,6 @@ function cargarTabla(data) {
     celda6.appendChild(btnBorrar);
     celda7.appendChild(btnEditar);
 }
-
 
 /**
  * crea, da estilo (desde css) y función al boton borrar,
@@ -180,9 +215,13 @@ function botonBorrar(idElemento) {
     btnBorrar.classList.add("btnBorrar");
 
     btnBorrar.setAttribute("id", idElemento);
-    btnBorrar.addEventListener("click", function () {                   //pasar a funcion aparte
-        borrarObjetoDeServicio(btnBorrar.getAttribute("id"));
-        imprimirTabla();
+    btnBorrar.addEventListener("click", function () {
+        let id = btnBorrar.getAttribute("id");
+        borrarObjetoDeServicio(id)
+        .then(function (){
+            imprimirTabla();
+        });
+        
     });
     return btnBorrar;
 }
@@ -201,69 +240,43 @@ function botonEditar(idElemento) {
     //agregar id comun y por parametro traer id del data
 
     btn.addEventListener("click", function () {
-        let tdsFila = btn.closest("tr").querySelectorAll("td");           //TERMINAR!
-        
-        let div = divBtnAceptarCacelar(btn);
-        div.classList.add("mostrar");
-        btn.classList.remove("mostrar");
-        btn.classList.add("ocultar");
+        let tds = btn.closest("tr").querySelector("td");
+        let id = btn.getAttribute("id");
 
-        tdsFila[6].appendChild(div);
-        isEditable(tdsFila, "true");
+        mostrarEditando(btn, id);
     });
     return btn;
 }
 
-function editando(btn, div){
-    if (editando){
-        div.classList.toggle("mostrar");
-        btn.classList.remove("mostrar");
-        btn.classList.add("ocultar");
-        return true;
-    }
-    divBtns.classList.remove("mostrar");
-    divBtns.classList.add("ocultar");
-    
-    btn.classList.add("mostrar");
-}
-
-function isEditable(tdsFila, editando) {
-    if (editando) {
-        for (let i = 0; i< 5; i++) {
-            tdsFila[i].contentEditable = "true";
-        }
-    } else {
-        for (let i = 0; i< 5; i++) {
-            tdsFila[i].contentEditable = "false";
-        }
-    }
-}
-
-function divBtnAceptarCacelar(btn) {
-    let tdsFila = btn.closest("tr").querySelectorAll("td");
+/**
+ * crea, da estilo (desde css) y función a los botones aceptar y cancelar contenidos en un div,
+ * aparecen cuando se esta editando una fila.
+ * Aceptar = oculta input de edicion y actualiza el servidor
+ * cancelar = oculta inputs de edicion
+ * @param {*} id 
+ */
+function divBtnAceptarCancelar(id) {
 
     let divBtns = document.createElement("div");
     let btnAceptar = document.createElement("button");
     btnAceptar.innerHTML = "Aceptar";
     btnAceptar.classList.add("btn");
+    btnAceptar.setAttribute("id", id);
 
     btnAceptar.addEventListener("click", function () {
-        divBtns.classList.remove("mostrar");
-        divBtns.classList.add("ocultar");
-        
-        btn.classList.add("mostrar");
-        isEditable(tdsFila, "false");
+        let id = btnAceptar.getAttribute("id");
+        ocultarEditando(btnAceptar, id, true);
+
     });
 
     let btnCancelar = document.createElement("button");
     btnCancelar.innerHTML = "Cancelar";
     btnCancelar.classList.add("btn");
-    btnCancelar.addEventListener("click", function () {
-        divBtns.classList.remove("mostrar");
-        divBtns.classList.add("ocultar");
+    btnCancelar.setAttribute("id", id);
 
-        btn.classList.add("mostrar");
-        isEditable(tdsFila, "false");
+    btnCancelar.addEventListener("click", function () {
+        let id = btnCancelar.getAttribute("id");
+        ocultarEditando(btnCancelar, id, false);
     });
 
     divBtns.appendChild(btnAceptar);
@@ -272,18 +285,125 @@ function divBtnAceptarCacelar(btn) {
     return divBtns;
 }
 
-function buscarElementos() {
-    cuerpoTabla.innerHTML = "";
-    getJsonServicio()
-        .then(function (json) {
-            for (let element of json.series) {
-                if (element.thing.titulo == inputBuscar.value) {
-                    cargarTabla(element);
-                }
-            }
-        });
+
+/**
+ * al presionar el boton editar se ejecuta este metodo,
+ * El cual oculta valores de las celdas a editar y agrega input con el valor anterior
+ * (para luego actalizarlo).
+ * Tambien remueve boton editar y agrega div con btns aceptar y cancelar.
+ * @param {*} btn 
+ * @param {*} id 
+ */
+async function mostrarEditando(btn, id) {
+    let inputCap;
+    let inputTemp;
+    let inputFecha;
+    let inputTitulo;
+    let areaSinopsis;
+
+    let tdsFila = btn.closest("tr").querySelectorAll("td");
+    let valores = await getJsonServicio(id);
+
+    //remover valores de la fila para mostrar inputs
+    for (let i = 0; i < 5; i++) {
+        tdsFila[i].innerHTML = " ";
+    }
+
+    //quita btnEditar y agrega div
+    let div = divBtnAceptarCancelar(id);
+    tdsFila[6].removeChild(btn);
+    tdsFila[6].appendChild(div);
+
+    //input capitulo
+    inputCap = document.createElement("input");
+    inputCap.type = "number";
+    inputCap.value = valores.thing.numCapitulo;
+    tdsFila[0].innerHTML = "";
+    tdsFila[0].appendChild(inputCap);
+    //input temprada
+    inputTemp = document.createElement("input");
+    inputTemp.type = "number";
+    inputTemp.value = valores.thing.numTemporada;
+    tdsFila[1].appendChild(inputTemp);
+    //input titulo       
+    inputTitulo = document.createElement("input");
+    inputTitulo.type = "text";
+    inputTitulo.value = valores.thing.titulo.toString();
+    tdsFila[2].appendChild(inputTitulo);
+    //input fecha emision                                               
+    inputFecha = document.createElement("input");
+    inputFecha.type = "date";
+    inputFecha.value = valores.thing.fechaEmision.toString();
+    tdsFila[3].appendChild(inputFecha);
+    //input sinopsis                                                     
+    areaSinopsis = document.createElement("textarea");
+    areaSinopsis.value = valores.thing.sinopsis.toString();
+    tdsFila[4].appendChild(areaSinopsis);
 }
 
+/**
+ * al presionar el boton aceptar/cancelar se ejecuta este metodo,
+ * El cual oculta inputs de las celdas a editar y agrega sus valores del servicio 
+ * Tambien remueve div con btns aceptar y cancelar y agrega boton editar.
+ * 
+ * Aceptar = envia true (actualiza el objeto en el servicio)
+ * Cancelar = envia false
+ * @param {*} btn 
+ * @param {*} id 
+ * @param {*} editarServicio boolean (actualizar o no el servicio)
+ */
+async function ocultarEditando(btn, id, editarServicio) {
+    tdsFila = btn.closest("tr").querySelectorAll("td");
 
+    let div = tdsFila[6].querySelector("div");
 
+    tdsFila[6].removeChild(div);
+    tdsFila[6].appendChild(botonEditar(id));
 
+    //inputs en las celdas
+    let capitulo = tdsFila[0].querySelector("input");
+    let temporada = tdsFila[1].querySelector("input");
+    let tituloSerie = tdsFila[2].querySelector("input");
+    let emision = tdsFila[3].querySelector("input");
+    let sinop = tdsFila[4].querySelector("textarea");
+
+    if (editarServicio) {
+        let data =
+        {
+            "thing":
+            {
+                "numCapitulo": capitulo.value,
+                "numTemporada": temporada.value,
+                "titulo": tituloSerie.value,
+                "fechaEmision": emision.value,
+                "sinopsis": sinop.value,
+            }
+        };
+
+        await editarObjetoDeServicio(id, data);
+    }
+
+    //imprimir valores de la fila haya sido editada o no
+    let filaEditada = await getJsonServicio(id);
+
+    //numcapitulo
+    tdsFila[0].removeChild(capitulo);
+    let texto0 = document.createTextNode(filaEditada.thing.numCapitulo);
+    tdsFila[0].appendChild(texto0);
+    //numTemporada
+    tdsFila[1].removeChild(temporada);
+    let texto1 = document.createTextNode(filaEditada.thing.numTemporada);
+    tdsFila[1].appendChild(texto1);
+    //titulo
+    tdsFila[2].removeChild(tituloSerie);
+    let texto2 = document.createTextNode(filaEditada.thing.titulo);
+    tdsFila[2].appendChild(texto2);
+    //fecha de emision
+    tdsFila[3].removeChild(emision);
+    let texto3 = document.createTextNode(filaEditada.thing.fechaEmision);
+    tdsFila[3].appendChild(texto3);
+    //sinopsis
+    tdsFila[4].removeChild(sinop);
+    let texto4 = document.createTextNode(filaEditada.thing.sinopsis);
+    tdsFila[4].appendChild(texto4);
+}

@@ -284,6 +284,9 @@ input, .sinopsisCap{
 
 }
 
+.btn{
+    margin: 3% 0%;
+}
 
 @media only screen and (min-width:600px){
     /*Barra nav*/
