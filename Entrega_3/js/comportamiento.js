@@ -120,7 +120,10 @@ function agregarFilaDeForm(event) {
     };
 
     guardarEnServicio(data)
-    imprimirTabla();
+        .then(function () {
+            imprimirTabla();
+        });
+
 
 }
 
@@ -130,7 +133,7 @@ function agregarFilaDeForm(event) {
  * FILA. AL IGUAL QUE PARA DESTACAR O BUSCAR
  */
 function imprimirTabla() {
-    
+
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -151,7 +154,7 @@ function imprimirTabla() {
  * 
  */
 function buscarElementos() {
-   
+
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -218,10 +221,10 @@ function botonBorrar(idElemento) {
     btnBorrar.addEventListener("click", function () {
         let id = btnBorrar.getAttribute("id");
         borrarObjetoDeServicio(id)
-        .then(function (){
-            imprimirTabla();
-        });
-        
+            .then(function () {
+                imprimirTabla();
+            });
+
     });
     return btnBorrar;
 }
