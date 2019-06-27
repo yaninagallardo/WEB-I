@@ -121,7 +121,7 @@ ul li{
     height: 43px;
 }
  .btnCapitulo,.btnComentar,.enviar,button.tamanioButton{
-     margin-bottom: 2%;
+    margin: 0% 2% 2% 2%;
     font-family: cursive;
     font-size: 20px;
     background-color: blueviolet;
@@ -130,9 +130,13 @@ ul li{
     padding: 1%;
     display: block;
 }
+.botonesFormularioComentario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .btnCapitulo {
-    margin-right: 75%;
     color: #fff;
 }
 
@@ -203,10 +207,7 @@ ul li{
     margin-bottom: 3%;
 }
 
-/*div bontones em info*/
-.botonesFormularioComentario{
-    margin-left:3%;
-}
+
 
  /*--- Tabla de capitulos---*/
 .imagenTabla{
