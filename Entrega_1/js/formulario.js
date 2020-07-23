@@ -34,7 +34,7 @@ function cargarFormulario() {
     capitulo.value = capituloAleatorio();
     comentario.value = comentarioAleatorio();
     numCaptcha.innerHTML = captchaAleatorio();
-    console.log("aca " + numCaptcha.innerHTML);
+    //console.log("aca " + numCaptcha.innerHTML);
 }
 
 /**
@@ -117,6 +117,8 @@ function submitIn(event){
         alert("Captcha incorrecto");
     }
 }
+
+
 
 //----- ATRIBUTOS -----//
 
